@@ -7,6 +7,11 @@ Full per-file rationale and category breakdowns are in the companion docs:
 - [pii-realistic-v1-uncommon-spans.md](pii-realistic-v1-uncommon-spans.md)
 - [pii-injected-hard-v1-uncommon-spans.md](pii-injected-hard-v1-uncommon-spans.md)
 
+For how the four entity-level PII models actually score against these refined
+datasets (with and without the regex supplement), see:
+- [pii-results-refined-with-regex.md](pii-results-refined-with-regex.md)
+- [pii-results-refined-no-regex.md](pii-results-refined-no-regex.md)
+
 ## What changed vs. what didn't
 
 **Formats/structure were never changed.** Separators, punctuation, grouping, defanging notation (`[.]`, spaces, `dot`/`at` word-substitution), and overall string length were preserved exactly as in the original in every case.
