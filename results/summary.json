@@ -1,0 +1,130 @@
+{
+  "privacy_filter": {
+    "guardrails/pii-injected-v1": {
+      "dataset": "guardrails/pii-injected-v1",
+      "items": 130,
+      "tp": 232,
+      "fp": 23,
+      "fn": 5,
+      "precision": 0.9098,
+      "recall": 0.9789,
+      "f1": 0.9431
+    },
+    "guardrails/pii-injected-hard-v1": {
+      "dataset": "guardrails/pii-injected-hard-v1",
+      "items": 130,
+      "tp": 98,
+      "fp": 44,
+      "fn": 3,
+      "precision": 0.6901,
+      "recall": 0.9703,
+      "f1": 0.8066
+    },
+    "guardrails/pii-realistic-v1": {
+      "dataset": "guardrails/pii-realistic-v1",
+      "items": 130,
+      "tp": 171,
+      "fp": 29,
+      "fn": 2,
+      "precision": 0.855,
+      "recall": 0.9884,
+      "f1": 0.9169
+    }
+  },
+  "pii_superclinical_small": {
+    "guardrails/pii-injected-v1": {
+      "dataset": "guardrails/pii-injected-v1",
+      "items": 130,
+      "tp": 233,
+      "fp": 13,
+      "fn": 4,
+      "precision": 0.9472,
+      "recall": 0.9831,
+      "f1": 0.9648
+    },
+    "guardrails/pii-injected-hard-v1": {
+      "dataset": "guardrails/pii-injected-hard-v1",
+      "items": 130,
+      "tp": 85,
+      "fp": 29,
+      "fn": 16,
+      "precision": 0.7456,
+      "recall": 0.8416,
+      "f1": 0.7907
+    },
+    "guardrails/pii-realistic-v1": {
+      "dataset": "guardrails/pii-realistic-v1",
+      "items": 130,
+      "tp": 171,
+      "fp": 33,
+      "fn": 2,
+      "precision": 0.8382,
+      "recall": 0.9884,
+      "f1": 0.9072
+    }
+  },
+  "privacy_filter_nemotron": {
+    "guardrails/pii-injected-v1": {
+      "dataset": "guardrails/pii-injected-v1",
+      "items": 130,
+      "tp": 235,
+      "fp": 9,
+      "fn": 2,
+      "precision": 0.9631,
+      "recall": 0.9916,
+      "f1": 0.9771
+    },
+    "guardrails/pii-injected-hard-v1": {
+      "dataset": "guardrails/pii-injected-hard-v1",
+      "items": 130,
+      "tp": 88,
+      "fp": 26,
+      "fn": 13,
+      "precision": 0.7719,
+      "recall": 0.8713,
+      "f1": 0.8186
+    },
+    "guardrails/pii-realistic-v1": {
+      "dataset": "guardrails/pii-realistic-v1",
+      "items": 130,
+      "tp": 168,
+      "fp": 26,
+      "fn": 5,
+      "precision": 0.866,
+      "recall": 0.9711,
+      "f1": 0.9155
+    }
+  },
+  "pii_superclinical_large": {
+    "guardrails/pii-injected-v1": {
+      "dataset": "guardrails/pii-injected-v1",
+      "items": 130,
+      "tp": 235,
+      "fp": 8,
+      "fn": 2,
+      "precision": 0.9671,
+      "recall": 0.9916,
+      "f1": 0.9792
+    },
+    "guardrails/pii-injected-hard-v1": {
+      "dataset": "guardrails/pii-injected-hard-v1",
+      "items": 130,
+      "tp": 101,
+      "fp": 20,
+      "fn": 0,
+      "precision": 0.8347,
+      "recall": 1.0,
+      "f1": 0.9099
+    },
+    "guardrails/pii-realistic-v1": {
+      "dataset": "guardrails/pii-realistic-v1",
+      "items": 130,
+      "tp": 173,
+      "fp": 13,
+      "fn": 0,
+      "precision": 0.9301,
+      "recall": 1.0,
+      "f1": 0.9638
+    }
+  }
+}

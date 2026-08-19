@@ -1,0 +1,4729 @@
+{
+  "dataset_name": "guardrails/pii-realistic-v1",
+  "items": [
+    {
+      "input": {
+        "text": "Parallel calculations with multiple calculators. #3720-59"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "e29ee1e6fafd051286c50f1f3e3e0b06",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Performing specified calculation. Hi, this is Ravi Patel from accounting \u2014 my direct line is 311.220.4539."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Ravi Patel",
+            "start": 46,
+            "end": 56
+          },
+          {
+            "type": "PHONE",
+            "text": "311.220.4539",
+            "start": 93,
+            "end": 105
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Ravi Patel",
+            "start": 46,
+            "end": 56
+          },
+          {
+            "type": "PHONE",
+            "text": "311.220.4539",
+            "start": 93,
+            "end": 105
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "e29ee1e6fafd051286c50f1f3e3e0b06",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Parallel execution of two calculations. #{_('app.account.id')}"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "e29ee1e6fafd051286c50f1f3e3e0b06",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Please perform the first calculation as specified by the user.\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 01:54:45 PM UTC\n\nAdditional information:\noriginal_user_message: \"Run TWO calculations in parallel through the Parallel Middle Dispatcher: the first one via Calculator A and the second one via Calculator B. Both must run at the same time.\". #{_('app.account.id')}"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "e29ee1e6fafd051286c50f1f3e3e0b06",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nUser: Please perform the first calculation as specified by the user.\n\nYour reformulated query:. build 849"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "e29ee1e6fafd051286c50f1f3e3e0b06",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "What is the first calculation you would like me to perform? 2023-12-26"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "e29ee1e6fafd051286c50f1f3e3e0b06",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Run TWO calculations in parallel: the first one via Calculator A and the second one via Calculator B. Both must run at the same time.\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 01:54:45 PM UTC\n\nAdditional information:\noriginal_user_message: \"Run TWO calculations in parallel through the Parallel Middle Dispatcher: the first one via Calculator A and the second one via Calculator B. Both must run at the same time.\". commit d273691. p99 7.19s"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "e29ee1e6fafd051286c50f1f3e3e0b06",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Run TWO calculations in parallel through the Parallel Middle Dispatcher: the first one via Calculator A and the second one via Calculator B. Both must run at the same time.\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 01:54:45 PM UTC. Please loop in Priya Rossi; you can reach them at nina.silva@acme.io or 598.271.9803."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Priya Rossi",
+            "start": 268,
+            "end": 279
+          },
+          {
+            "type": "EMAIL",
+            "text": "nina.silva@acme.io",
+            "start": 303,
+            "end": 321
+          },
+          {
+            "type": "PHONE",
+            "text": "598.271.9803",
+            "start": 325,
+            "end": 337
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Priya Rossi",
+            "start": 268,
+            "end": 279
+          },
+          {
+            "type": "EMAIL",
+            "text": "nina.silva@acme.io",
+            "start": 303,
+            "end": 321
+          },
+          {
+            "type": "PHONE",
+            "text": "598.271.9803",
+            "start": 325,
+            "end": 337
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "e29ee1e6fafd051286c50f1f3e3e0b06",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 3,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Workato Developer API base URLs. ORD-96339. #{_('app.account.id')}"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "0de73ec964bf5343cf5aa92a22019b97",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nadditional_ai_instruction: \n\nUser: question: What is the base URL for Workato's Developer APIs?\nexpected_answer: Based on the Workato documentation, the base URL for Workato's Developer APIs depends on which data center you're using:\nBase URLs by Data Center:\n\nUS Data Center: the link\nEU Data Center: the link\nJP Data Center: the link\nSG Data Center: the link\nAU Data Center: the link\nIL Data Center: the link\nDeveloper sandbox: the link\n\nThese base URLs are used as the foundation for all API endpoints. You'll append the specific resource path to the appropriate base URL for your data center when making API calls.\nexpected_facts: ['Base URLs depend on data center', 'US: the link 'EU: the link 'JP: the link\nactual_answer: The base URL for Workato's Developer APIs depends on your data center. Here are the URLs for each region:\n\n- US Data Center: the link\n- EU Data Center: the link\n- JP Data Center: the link\n- SG Data Center: the link\n- AU Data Center: the link\n\nChoose the base URL corresponding to your Workato workspace\u2019s data center. \n\nSummary: Workato's Developer API base URL varies by region; use the appropriate one for your data center.\n\nYour reformulated query:. Set up an account for yuki.rossi; SSN on file is 686-98-3643."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "USERNAME",
+            "text": "yuki.rossi",
+            "start": 1209,
+            "end": 1219
+          },
+          {
+            "type": "SSN",
+            "text": "686-98-3643",
+            "start": 1236,
+            "end": 1247
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "USERNAME",
+            "text": "yuki.rossi",
+            "start": 1209,
+            "end": 1219
+          },
+          {
+            "type": "SSN",
+            "text": "686-98-3643",
+            "start": 1236,
+            "end": 1247
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "0de73ec964bf5343cf5aa92a22019b97",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "What are the base URLs for Workato's Developer APIs based on different data centers or regions? Thanks,\nAlex Rossi\npriya dot khan at corp dot example"
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Alex Rossi",
+            "start": 104,
+            "end": 114
+          },
+          {
+            "type": "EMAIL",
+            "text": "priya dot khan at corp dot example",
+            "start": 115,
+            "end": 149
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Alex Rossi",
+            "start": 104,
+            "end": 114
+          },
+          {
+            "type": "EMAIL",
+            "text": "priya dot khan at corp dot example",
+            "start": 115,
+            "end": 149
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "0de73ec964bf5343cf5aa92a22019b97",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "question: What is the base URL for Workato's Developer APIs?\nexpected_answer: Based on the Workato documentation, the base URL for Workato's Developer APIs depends on which data center you're using:\nBase URLs by Data Center:\n\nUS Data Center: the link\nEU Data Center: the link\nJP Data Center: the link\nSG Data Center: the link\nAU Data Center: the link\nIL Data Center: the link\nDeveloper sandbox: the link\n\nThese base URLs are used as the foundation for all API endpoints. You'll append the specific resource path to the appropriate base URL for your data center when making API calls.\nexpected_facts: ['Base URLs depend on data center', 'US: the link 'EU: the link 'JP: the link\nactual_answer: The base URL for Workato's Developer APIs depends on your data center. Here are the URLs for each region:\n\n- US Data Center: the link\n- EU Data Center: the link\n- JP Data Center: the link\n- SG Data Center: the link\n- AU Data Center: the link\n\nChoose the base URL corresponding to your Workato workspace\u2019s data center. \n\nSummary: Workato's Developer API base URL varies by region; use the appropriate one for your data center.\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 01:54:40 PM UTC. Hi, this is Ravi Morgan from accounting \u2014 my direct line is 688.553.5697."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Ravi Morgan",
+            "start": 1211,
+            "end": 1222
+          },
+          {
+            "type": "PHONE",
+            "text": "688.553.5697",
+            "start": 1259,
+            "end": 1271
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Ravi Morgan",
+            "start": 1211,
+            "end": 1222
+          },
+          {
+            "type": "PHONE",
+            "text": "688.553.5697",
+            "start": 1259,
+            "end": 1271
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "0de73ec964bf5343cf5aa92a22019b97",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Parallel calculation execution. Thanks,\nAlex Patel\ntheo dot khan at acme dot io"
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Alex Patel",
+            "start": 40,
+            "end": 50
+          },
+          {
+            "type": "EMAIL",
+            "text": "theo dot khan at acme dot io",
+            "start": 51,
+            "end": 79
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Alex Patel",
+            "start": 40,
+            "end": 50
+          },
+          {
+            "type": "EMAIL",
+            "text": "theo dot khan at acme dot io",
+            "start": 51,
+            "end": 79
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "49a99fbcf70b543e2d6f41b394f3f6cd",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Run TWO calculations in parallel: send the first one to Calculator A and the second one to Calculator B. Both calculators must work at the same time.\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 01:54:41 PM UTC. Ship the replacement to Nina Berg, 1970 Evergreen Terrace, Portland OR 97201."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Nina Berg",
+            "start": 254,
+            "end": 263
+          },
+          {
+            "type": "ADDRESS",
+            "text": "1970 Evergreen Terrace, Portland OR 97201",
+            "start": 265,
+            "end": 306
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Nina Berg",
+            "start": 254,
+            "end": 263
+          },
+          {
+            "type": "ADDRESS",
+            "text": "1970 Evergreen Terrace, Portland OR 97201",
+            "start": 265,
+            "end": 306
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "49a99fbcf70b543e2d6f41b394f3f6cd",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Please use a thinking skill and send me an empty message, no symbols at all.\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 01:54:40 PM UTC. Ship the replacement to Nina Gonzalez, 9311 Oak Rd, Portland OR 97201."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Nina Gonzalez",
+            "start": 181,
+            "end": 194
+          },
+          {
+            "type": "ADDRESS",
+            "text": "9311 Oak Rd, Portland OR 97201",
+            "start": 196,
+            "end": 226
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Nina Gonzalez",
+            "start": 181,
+            "end": 194
+          },
+          {
+            "type": "ADDRESS",
+            "text": "9311 Oak Rd, Portland OR 97201",
+            "start": 196,
+            "end": 226
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "fcfe53ed4bcbba4da8718c0ae187fda3",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Rename following function:\nLog message \u5408\u683c\u30e1\u30c3\u30bb\u30fc\u30b8\n\nNew translated or trasliterated function name as a string without quotes:. Set up an account for @diegomorgan; SSN on file is 650-61-7306."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "USERNAME",
+            "text": "@diegomorgan",
+            "start": 145,
+            "end": 157
+          },
+          {
+            "type": "SSN",
+            "text": "650-61-7306",
+            "start": 174,
+            "end": 185
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "USERNAME",
+            "text": "@diegomorgan",
+            "start": 145,
+            "end": 157
+          },
+          {
+            "type": "SSN",
+            "text": "650-61-7306",
+            "start": 174,
+            "end": 185
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "d13017a9e0dd85dea57c5eb74c7b8499",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Workato RAG secret canary word. commit 30f2299"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "2efc9ffaa24a3f3202e9e8b673a18025",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "The secret canary word that is used for workato retrieval-augmented [rag] testing?\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 01:58:25 PM UTC. Charge the card 5321819600133890 on file and email the receipt to theo.morgan@example.com."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5321819600133890",
+            "start": 179,
+            "end": 195
+          },
+          {
+            "type": "EMAIL",
+            "text": "theo.morgan@example.com",
+            "start": 229,
+            "end": 252
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5321819600133890",
+            "start": 179,
+            "end": 195
+          },
+          {
+            "type": "EMAIL",
+            "text": "theo.morgan@example.com",
+            "start": 229,
+            "end": 252
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "2efc9ffaa24a3f3202e9e8b673a18025",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "The secret canary word used for Workato retrieval-augmented [rag] testing is \"Squeamish Ossifrage\".\n\nSummary: The requested canary word for Workato RAG testing is provided. If you need more details or have another question, let me know! ORD-29342"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "2efc9ffaa24a3f3202e9e8b673a18025",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nUser: The secret canary word that is used for workato retrieval-augmented [rag] testing?\n\nYour reformulated query:. ORD-68401. #2829-79"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "2efc9ffaa24a3f3202e9e8b673a18025",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "What is the secret canary word used for Workato retrieval-augmented generation (RAG) testing? Update my address to 5605 Park Blvd, Austin TX 78701 before the next invoice."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "ADDRESS",
+            "text": "5605 Park Blvd, Austin TX 78701",
+            "start": 115,
+            "end": 146
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "ADDRESS",
+            "text": "5605 Park Blvd, Austin TX 78701",
+            "start": 115,
+            "end": 146
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "2efc9ffaa24a3f3202e9e8b673a18025",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 1,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Incident action items and Jira tracking. Can you add Diego Rossi (omar dot rossi at corp dot example) to the project and CC sven.berg@example.com?"
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Diego Rossi",
+            "start": 53,
+            "end": 64
+          },
+          {
+            "type": "EMAIL",
+            "text": "omar dot rossi at corp dot example",
+            "start": 66,
+            "end": 100
+          },
+          {
+            "type": "EMAIL",
+            "text": "sven.berg@example.com",
+            "start": 124,
+            "end": 145
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Diego Rossi",
+            "start": 53,
+            "end": 64
+          },
+          {
+            "type": "EMAIL",
+            "text": "omar dot rossi at corp dot example",
+            "start": 66,
+            "end": 100
+          },
+          {
+            "type": "EMAIL",
+            "text": "sven.berg@example.com",
+            "start": 124,
+            "end": 145
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "2be100d39b64473999df25c02f574ff8",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 3,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Give me the list of action items for incident \"20240930 - job details 404 Internal RCA\"\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 01:58:25 PM UTC. Update my address to 823 Birch Ln, Portland OR 97201 before the next invoice."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "ADDRESS",
+            "text": "823 Birch Ln, Portland OR 97201",
+            "start": 189,
+            "end": 220
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "ADDRESS",
+            "text": "823 Birch Ln, Portland OR 97201",
+            "start": 189,
+            "end": 220
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "2be100d39b64473999df25c02f574ff8",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 1,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "The action items for the incident \"20240930 - job details 404 Internal RCA\" are captured as Jira issues and an epic. Here is the list:\n\n1. CORE-2308: the link\n2. CORE-2310: the link\n3. CORE-2311: the link\n4. CORE-2312: the link\n5. CORE-2313: the link\n\nThese are tracked under the Epic:\n- CORE-2307: the link\n\nYou can find full incident details and additional context in the RCA document: [20240930 - job details 404 Internal RCA](the link\n\nSummary: All key action items are tracked as Jira tickets and linked to an epic for the incident. If you need descriptions or ownership details, let me know! Hi, this is Ravi Alvarez from accounting \u2014 my direct line is +1 (378) 513-2400."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Ravi Alvarez",
+            "start": 610,
+            "end": 622
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 (378) 513-2400",
+            "start": 659,
+            "end": 676
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Ravi Alvarez",
+            "start": 610,
+            "end": 622
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 (378) 513-2400",
+            "start": 659,
+            "end": 676
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "2be100d39b64473999df25c02f574ff8",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nadditional_ai_instruction: \n\nUser: Give me the list of action items for incident \"20240930 - job details 404 Internal RCA\"\n\nYour reformulated query:. Forwarding the ticket from Sara Berg theo.khan@corp.example \u2014 they're on 59.243.18.239."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Sara Berg",
+            "start": 183,
+            "end": 192
+          },
+          {
+            "type": "EMAIL",
+            "text": "theo.khan@corp.example",
+            "start": 193,
+            "end": 215
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "59.243.18.239",
+            "start": 229,
+            "end": 242
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Sara Berg",
+            "start": 183,
+            "end": 192
+          },
+          {
+            "type": "EMAIL",
+            "text": "theo.khan@corp.example",
+            "start": 193,
+            "end": 215
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "59.243.18.239",
+            "start": 229,
+            "end": 242
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "2be100d39b64473999df25c02f574ff8",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 3,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "What is the list of action items for the incident titled \"20240930 - job details 404 Internal RCA\"? Please loop in Camila Haddad; you can reach them at alex.gonzalez@acme.io or +1 (982) 760-8112."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Camila Haddad",
+            "start": 115,
+            "end": 128
+          },
+          {
+            "type": "EMAIL",
+            "text": "alex.gonzalez@acme.io",
+            "start": 152,
+            "end": 173
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 (982) 760-8112",
+            "start": 177,
+            "end": 194
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Camila Haddad",
+            "start": 115,
+            "end": 128
+          },
+          {
+            "type": "EMAIL",
+            "text": "alex.gonzalez@acme.io",
+            "start": 152,
+            "end": 173
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 (982) 760-8112",
+            "start": 177,
+            "end": 194
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "2be100d39b64473999df25c02f574ff8",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 3,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Troubleshooting Xcode installation issues. Thanks,\nTheo Lindgren\nsven.gonzalez@acme.io"
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Theo Lindgren",
+            "start": 51,
+            "end": 64
+          },
+          {
+            "type": "EMAIL",
+            "text": "sven.gonzalez@acme.io",
+            "start": 65,
+            "end": 86
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Theo Lindgren",
+            "start": 51,
+            "end": 64
+          },
+          {
+            "type": "EMAIL",
+            "text": "sven.gonzalez@acme.io",
+            "start": 65,
+            "end": 86
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "03fb81bb48b569958f56650ac5615048",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Can not install xcode\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 01:58:24 PM UTC. Reporter Alex Gonzalez (alex dot silva at acme dot io) hit the error on host 68.239.203.67."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Alex Gonzalez",
+            "start": 111,
+            "end": 124
+          },
+          {
+            "type": "EMAIL",
+            "text": "alex dot silva at acme dot io",
+            "start": 126,
+            "end": 155
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "68.239.203.67",
+            "start": 179,
+            "end": 192
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Alex Gonzalez",
+            "start": 111,
+            "end": 124
+          },
+          {
+            "type": "EMAIL",
+            "text": "alex dot silva at acme dot io",
+            "start": 126,
+            "end": 155
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "68.239.203.67",
+            "start": 179,
+            "end": 192
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "03fb81bb48b569958f56650ac5615048",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 3,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "If you're unable to install Xcode, here are the steps and troubleshooting tips that may help:\n\n### Installation Steps for Xcode\n1. **Open the Mac App Store**:\n   - Click the App Store icon in your Dock.\n   \n2. **Search for Xcode**:\n   - Use the search bar to search for \"Xcode.\"\n\n3. **Download and Install**:\n   - Click the \u201cGet\u201d button to download Xcode.\n   - The download process may take time based on your internet connection.\n   - Open the Terminal and run the following command to install command-line tools:\n     ```bash\n     xcode-select --install\n     ```\n\n4. **Sign in with Your Apple ID (Optional)**:\n   - Sign in if prompted; this may be required for certain features.\n\n5. **Complete Installation**:\n   - Follow on-screen instructions to finish installation, including accepting license agreements.\n\n### Troubleshooting Tips\n1. **Check Internet Connection**:\n   - Ensure your connection is stable and fast enough for the Xcode download.\n\n2. **Restart Your Mac**:\n   - A restart can often resolve unresponsive app installations.\n\n3. **Check System Requirements**:\n   - Verify your Mac supports the latest version of Xcode.\n\n4. **Clear Existing Installation Traces** (if applicable):\n   - If you have any old or corrupt installations, remove them.\n\n5. **Contact Apple Support or Enterprise Support**:\n   - If none of the above resolves the issue, you may contact Apple or your Enterprise Support.\n\nFor the detailed guide, you can visit this [Install Xcode Guide](the link \n\nIf the issue persists, consider raising a ticket with your IT or Apple support team for more tailored assistance. #6733-45"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "03fb81bb48b569958f56650ac5615048",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nUser: Can not install xcode\n\nYour reformulated query:. Wire it to the account holder Noah Morgan, card 4265 4235 1161 5599."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Noah Morgan",
+            "start": 91,
+            "end": 102
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "4265 4235 1161 5599",
+            "start": 109,
+            "end": 128
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Noah Morgan",
+            "start": 91,
+            "end": 102
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "4265 4235 1161 5599",
+            "start": 109,
+            "end": 128
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "03fb81bb48b569958f56650ac5615048",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "What steps can I take to resolve issues preventing the installation of Xcode? p95 3.96s"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "03fb81bb48b569958f56650ac5615048",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Rename following function:\nGet-User-Details\n\nNew translated or trasliterated function name as a string without quotes:. Hi, this is Ravi Berg from accounting \u2014 my direct line is 838.940.9908."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Ravi Berg",
+            "start": 132,
+            "end": 141
+          },
+          {
+            "type": "PHONE",
+            "text": "838.940.9908",
+            "start": 178,
+            "end": 190
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Ravi Berg",
+            "start": 132,
+            "end": 141
+          },
+          {
+            "type": "PHONE",
+            "text": "838.940.9908",
+            "start": 178,
+            "end": 190
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "fb09d482c8bfda6d4aeea45dcf28e870",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Counting opportunities in sales data. p99 5.41s. exit code 136"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "ba804d87a15b4160b3326848656fd09c",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Call get_sales_data and tell me how many opportunities are in the response.\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 01:59:20 PM UTC. Please loop in Maria Rossi; you can reach them at sven dot gonzalez at northwind dot io or +1 (367) 714-9143."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Maria Rossi",
+            "start": 171,
+            "end": 182
+          },
+          {
+            "type": "EMAIL",
+            "text": "sven dot gonzalez at northwind dot io",
+            "start": 206,
+            "end": 243
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 (367) 714-9143",
+            "start": 247,
+            "end": 264
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Maria Rossi",
+            "start": 171,
+            "end": 182
+          },
+          {
+            "type": "EMAIL",
+            "text": "sven dot gonzalez at northwind dot io",
+            "start": 206,
+            "end": 243
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 (367) 714-9143",
+            "start": 247,
+            "end": 264
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "ba804d87a15b4160b3326848656fd09c",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 3,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "There are 1,000 opportunities in the response.\n\nSummary: The response from get_sales_data contains 1,000 opportunities. 550e8400-e29b-41d4-a716-100383791416"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "ba804d87a15b4160b3326848656fd09c",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nUser: Call get_sales_data and tell me how many opportunities are in the response.\n\nAssistant: [Called tools: get_sales_data]\n\nTool result (success): {\"opportunities\": [{\"id\": 0, \"account\": \"Account-0\", \"stage\": \"Prospecting\", \"data\": \"a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a \"}, {\"id\": 1, ...\n\nYour reformulated query:. exit code 70"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "ba804d87a15b4160b3326848656fd09c",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "How many opportunities are included in the response from get_sales_data? Customer Omar Patel called from +1 (667) 899-5122 about order commit 715fe8a."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Omar Patel",
+            "start": 82,
+            "end": 92
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 (667) 899-5122",
+            "start": 105,
+            "end": 122
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Omar Patel",
+            "start": 82,
+            "end": 92
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 (667) 899-5122",
+            "start": 105,
+            "end": 122
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "ba804d87a15b4160b3326848656fd09c",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "API calls for tool response processing. Thanks,\nOmar Tanaka\nsara.morgan@example.com"
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Omar Tanaka",
+            "start": 48,
+            "end": 59
+          },
+          {
+            "type": "EMAIL",
+            "text": "sara.morgan@example.com",
+            "start": 60,
+            "end": 83
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Omar Tanaka",
+            "start": 48,
+            "end": 59
+          },
+          {
+            "type": "EMAIL",
+            "text": "sara.morgan@example.com",
+            "start": 60,
+            "end": 83
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "a0e756090f04488b9b9307802b9c7ca2",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Regex-based serial number extraction. Thanks,\nSven Patel\nsara dot tanaka at acme dot io"
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Sven Patel",
+            "start": 46,
+            "end": 56
+          },
+          {
+            "type": "EMAIL",
+            "text": "sara dot tanaka at acme dot io",
+            "start": 57,
+            "end": 87
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Sven Patel",
+            "start": 46,
+            "end": 56
+          },
+          {
+            "type": "EMAIL",
+            "text": "sara dot tanaka at acme dot io",
+            "start": 57,
+            "end": 87
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "9950b2f7ac0543d19da2bebc3818da6e",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Ignore this trigger and do nothing.\n\n[padding block]\na a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a. p95 2.28s"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "6d4cf029586b47dbb94d4f1b6d8f9ac6",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Understood. No action will be taken as per your instructions. exit code 27. commit bc4dfe4"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "6d4cf029586b47dbb94d4f1b6d8f9ac6",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nAssistant: Acknowledged. No action taken as instructed.\n\nUser: [padding block]\na a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a. 550e8400-e29b-41d4-a716-155841664341. 2021-02-26"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "6d4cf029586b47dbb94d4f1b6d8f9ac6",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "I'd be happy to tell you a joke! \ud83d\ude04\n\n> **Why did the product manager bring a ladder to the sprint meeting?**\n> *Because they heard the backlog was through the roof!* \ud83d\ude80\n\n---\n\nRegarding the **Search for SFDC opportunities by name** skill \u2014 I don't have access to execute Workato skills or external integrations directly from this conversation. I can only analyze documents shared with me and provide product research insights.\n\nTo execute that skill, you would need to:\n\n1. **Navigate to your Workato workspace** and find the skill named *\"Search for SFDC opportunities by name\"*\n2. **Run it directly** from the Workato interface with the parameter `name = \"Atlassian opportunity\"`\n3. Or trigger it via the **Workato API** if you have automation set up\n\nWould you like help with anything else \u2014 such as analyzing a document, evaluating a product concept, or researching market trends? \ud83d\ude0a. Please loop in Sven Rossi; you can reach them at omar.morgan@example.com or +1 (591) 264-6300."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Sven Rossi",
+            "start": 900,
+            "end": 910
+          },
+          {
+            "type": "EMAIL",
+            "text": "omar.morgan@example.com",
+            "start": 934,
+            "end": 957
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 (591) 264-6300",
+            "start": 961,
+            "end": 978
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Sven Rossi",
+            "start": 900,
+            "end": 910
+          },
+          {
+            "type": "EMAIL",
+            "text": "omar.morgan@example.com",
+            "start": 934,
+            "end": 957
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 (591) 264-6300",
+            "start": 961,
+            "end": 978
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "38f1fbef63c44edb597cb985c6236006",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 3,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Searching SFDC opportunities with Workato. Ship the replacement to Sara Silva, 6845 Park Blvd, Springfield IL 62704."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Sara Silva",
+            "start": 67,
+            "end": 77
+          },
+          {
+            "type": "ADDRESS",
+            "text": "6845 Park Blvd, Springfield IL 62704",
+            "start": 79,
+            "end": 115
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Sara Silva",
+            "start": 67,
+            "end": 77
+          },
+          {
+            "type": "ADDRESS",
+            "text": "6845 Park Blvd, Springfield IL 62704",
+            "start": 79,
+            "end": 115
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "38f1fbef63c44edb597cb985c6236006",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nadditional_ai_instruction: \n\nUser: Tell me a joke and execute Search for SFDC opportunities by name skill with name = Atlassian opportunity\n\nYour reformulated query:. Ship the replacement to Marcus Alvarez, 8670 Birch Ln, Austin TX 78701."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Marcus Alvarez",
+            "start": 197,
+            "end": 211
+          },
+          {
+            "type": "ADDRESS",
+            "text": "8670 Birch Ln, Austin TX 78701",
+            "start": 213,
+            "end": 243
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Marcus Alvarez",
+            "start": 197,
+            "end": 211
+          },
+          {
+            "type": "ADDRESS",
+            "text": "8670 Birch Ln, Austin TX 78701",
+            "start": 213,
+            "end": 243
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "38f1fbef63c44edb597cb985c6236006",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Can you tell me a joke and search for Salesforce opportunities with the skill name \"Atlassian opportunity\"? exit code 244"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "38f1fbef63c44edb597cb985c6236006",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Extract nested JSON serial value. 9150 rows"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "a6c2a94f40934107b707bcd81a12d1cc",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "The exact serial value is: **API-24CEFF5501**. p95 9.73s. exit code 7"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "a6c2a94f40934107b707bcd81a12d1cc",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Datetime formatting in English, Russian, Spanish. build 253. 550e8400-e29b-41d4-a716-349495562710"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "262a9cda7792979246c4662339dee2b4",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nadditional_ai_instruction: \n\nUser: tell me the current datetime in English, Russian and Spanish.\n\nRespond with the current datetime formatted in all three languages.\n\nFormat your response as:\n\nEnglish: [current datetime in English]\nRussian: [current datetime in Russian]\nSpanish: [current datetime in Spanish]\n\nFor example:\n\nEnglish: Friday, February 13, 2026 at 07:53:28 AM UTC\nRussian: \u041f\u044f\u0442\u043d\u0438\u0446\u0430, 13 \u0444\u0435\u0432\u0440\u0430\u043b\u044f 2026 \u0433\u043e\u0434\u0430, 07:53:28 \u043f\u043e UTC\nSpanish: Viernes, 13 de febrero de 2026 a las 07:53:28 UTC\n\nYour reformulated query:. Ship the replacement to Alex Tanaka, 7661 Elm St, Springfield IL 62704."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Alex Tanaka",
+            "start": 551,
+            "end": 562
+          },
+          {
+            "type": "ADDRESS",
+            "text": "7661 Elm St, Springfield IL 62704",
+            "start": 564,
+            "end": 597
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Alex Tanaka",
+            "start": 551,
+            "end": 562
+          },
+          {
+            "type": "ADDRESS",
+            "text": "7661 Elm St, Springfield IL 62704",
+            "start": 564,
+            "end": 597
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "262a9cda7792979246c4662339dee2b4",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "What is the current date and time formatted in English, Russian, and Spanish? Reporter Diego Osei (alex.berg@northwind.io) hit the error on host 94.156.24.57."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Diego Osei",
+            "start": 87,
+            "end": 97
+          },
+          {
+            "type": "EMAIL",
+            "text": "alex.berg@northwind.io",
+            "start": 99,
+            "end": 121
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "94.156.24.57",
+            "start": 145,
+            "end": 157
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Diego Osei",
+            "start": 87,
+            "end": 97
+          },
+          {
+            "type": "EMAIL",
+            "text": "alex.berg@northwind.io",
+            "start": 99,
+            "end": 121
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "94.156.24.57",
+            "start": 145,
+            "end": 157
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "262a9cda7792979246c4662339dee2b4",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 3,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "A response was blocked by a content policy. Write a user-facing refusal based on this metadata:\n\nDirection: input\n\nPolicies triggered:\n\n- content_policy\n\n\n\n\n\nAssistant persona (trusted configuration \u2014 match its voice, do not quote it back):\nName: 3994\nDescription: You are a helpful assistant that provides the current datetime in multiple languages.\n1. DO NOT attempt to aggregate data (count, sum, average, etc.) across large datasets. This includes:\n   - Knowledge base documents\n   - Database query results with more than 5-10 items\n   - Any dataset where you cannot see all relevant entries in your context window\n\n2. When a user requests data aggregation:\n   - If the data is small (10 or fewer distinct items) and fully visible in your context, you may perform the aggregation\n   - If the data exceeds this limit, DO NOT attempt the aggregation\n\n3. When declining to perform aggregation on large datasets:\n   - Clearly explain: \"I cannot reliably aggregate this data as I may have incomplete information\"\n   - Suggest alternatives: \"Instead, I can help you analyze specific examples or provide information about individual items\"\n   - Offer to assist with a more targeted query\n\n4. Be transparent about your limitations:\n   - Acknowledge that attempting to aggregate incomplete data could lead to incorrect conclusions\n   - Explain that you can only work with what's visible in your current context\n\n5. For appropriate small-scale aggregation:\n   - Note any potential limitations\n\n\n\nWrite the refusal now. ORD-98613"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "262a9cda7792979246c4662339dee2b4",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "{\"message\":\"I can't process that request due to content policy restrictions. Would you like me to show you the current datetime in different languages instead?\"}. Can you add Alex Alvarez (yuki.rossi@corp.example) to the project and CC lena.silva@northwind.io?"
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Alex Alvarez",
+            "start": 175,
+            "end": 187
+          },
+          {
+            "type": "EMAIL",
+            "text": "yuki.rossi@corp.example",
+            "start": 189,
+            "end": 212
+          },
+          {
+            "type": "EMAIL",
+            "text": "lena.silva@northwind.io",
+            "start": 236,
+            "end": 259
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Alex Alvarez",
+            "start": 175,
+            "end": 187
+          },
+          {
+            "type": "EMAIL",
+            "text": "yuki.rossi@corp.example",
+            "start": 189,
+            "end": 212
+          },
+          {
+            "type": "EMAIL",
+            "text": "lena.silva@northwind.io",
+            "start": 236,
+            "end": 259
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "262a9cda7792979246c4662339dee2b4",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 3,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Extracting ERROR_CODE from tool response. #{_('app.account.id')}. exit code 133"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "814a32d52f9e44d6803916713f56d220",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "[padding block]\na a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a. Thanks,\nSara Larsson\nsara dot novak at mail dot test"
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Sara Larsson",
+            "start": 6009,
+            "end": 6021
+          },
+          {
+            "type": "EMAIL",
+            "text": "sara dot novak at mail dot test",
+            "start": 6022,
+            "end": 6053
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Sara Larsson",
+            "start": 6009,
+            "end": 6021
+          },
+          {
+            "type": "EMAIL",
+            "text": "sara dot novak at mail dot test",
+            "start": 6022,
+            "end": 6053
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "2a8b0ef80b76436a889b0c53e11f4a99",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "The exact serial number found is: `SN-23FEF3`. Please loop in Alex Berg; you can reach them at diego.morgan@northwind.io or +1 (435) 790-6633."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Alex Berg",
+            "start": 62,
+            "end": 71
+          },
+          {
+            "type": "EMAIL",
+            "text": "diego.morgan@northwind.io",
+            "start": 95,
+            "end": 120
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 (435) 790-6633",
+            "start": 124,
+            "end": 141
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Alex Berg",
+            "start": 62,
+            "end": 71
+          },
+          {
+            "type": "EMAIL",
+            "text": "diego.morgan@northwind.io",
+            "start": 95,
+            "end": 120
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 (435) 790-6633",
+            "start": 124,
+            "end": 141
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "d79176c46b1947c4b2b102239233310f",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 3,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Extract exact serial number using regex. Can you add Nina Rossi (alex dot berg at example dot com) to the project and CC lena.morgan@corp.example?"
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Nina Rossi",
+            "start": 53,
+            "end": 63
+          },
+          {
+            "type": "EMAIL",
+            "text": "alex dot berg at example dot com",
+            "start": 65,
+            "end": 97
+          },
+          {
+            "type": "EMAIL",
+            "text": "lena.morgan@corp.example",
+            "start": 121,
+            "end": 145
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Nina Rossi",
+            "start": 53,
+            "end": 63
+          },
+          {
+            "type": "EMAIL",
+            "text": "alex dot berg at example dot com",
+            "start": 65,
+            "end": 97
+          },
+          {
+            "type": "EMAIL",
+            "text": "lena.morgan@corp.example",
+            "start": 121,
+            "end": 145
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "d79176c46b1947c4b2b102239233310f",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 3,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Search SFDC opportunities by name skill. Thanks,\nSven Larsson\nravi.khan@acme.io"
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Sven Larsson",
+            "start": 49,
+            "end": 61
+          },
+          {
+            "type": "EMAIL",
+            "text": "ravi.khan@acme.io",
+            "start": 62,
+            "end": 79
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Sven Larsson",
+            "start": 49,
+            "end": 61
+          },
+          {
+            "type": "EMAIL",
+            "text": "ravi.khan@acme.io",
+            "start": 62,
+            "end": 79
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "4671d60238023f02d955485a646d11fd",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Can you tell me a joke and search for Salesforce (SFDC) opportunities with the name \"Atlassian opportunity\"? Thanks,\nYuki Silva\nlena dot novak at mail dot test"
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Yuki Silva",
+            "start": 117,
+            "end": 127
+          },
+          {
+            "type": "EMAIL",
+            "text": "lena dot novak at mail dot test",
+            "start": 128,
+            "end": 159
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Yuki Silva",
+            "start": 117,
+            "end": 127
+          },
+          {
+            "type": "EMAIL",
+            "text": "lena dot novak at mail dot test",
+            "start": 128,
+            "end": 159
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "4671d60238023f02d955485a646d11fd",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Sure! Here's a joke while I search for that opportunity simultaneously \ud83d\ude04\n\n**Joke:**\n> Why did the product manager bring a ladder to the meeting?\n> Because they heard the **bar** was being raised! \ud83d\ude80\n\nAnd let me look up that opportunity for you now! Hi, this is Lena Gonzalez from accounting \u2014 my direct line is 376.779.9009."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Lena Gonzalez",
+            "start": 260,
+            "end": 273
+          },
+          {
+            "type": "PHONE",
+            "text": "376.779.9009",
+            "start": 310,
+            "end": 322
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Lena Gonzalez",
+            "start": 260,
+            "end": 273
+          },
+          {
+            "type": "PHONE",
+            "text": "376.779.9009",
+            "start": 310,
+            "end": 322
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "4671d60238023f02d955485a646d11fd",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "API calls for tracking code retrieval. build 483"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "7fbbc2bb6efe4f5fa7d8af93535fa962",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "The third call to retrieve the `tracking_code` at `/items/200/tracking_code` did not return any data due to an access limit being reached for the provided tool response ID. 550e8400-e29b-41d4-a716-909710023284. #5963-51"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "7fbbc2bb6efe4f5fa7d8af93535fa962",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Adding team member to GitHub group. Hi, this is Lena Morgan from accounting \u2014 my direct line is 643.740.2915."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Lena Morgan",
+            "start": 48,
+            "end": 59
+          },
+          {
+            "type": "PHONE",
+            "text": "643.740.2915",
+            "start": 96,
+            "end": 108
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Lena Morgan",
+            "start": 48,
+            "end": 59
+          },
+          {
+            "type": "PHONE",
+            "text": "643.740.2915",
+            "start": 96,
+            "end": 108
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "914e14468a73fdfb4c502479ee2a2a5e",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Hi! Would you please assist with adding new team member to github group?\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 02:13:18 PM UTC. #2650-57. exit code 240"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "914e14468a73fdfb4c502479ee2a2a5e",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "To add a new team member to a GitHub group, you can follow these instructions based on the resources available internally:\n\n1. **Determine the GitHub instance**:\n   - There are two instances mentioned: **Workato-All org** and **Workato org**. Ensure you are working within the right organization.\n\n2. **Access Requests**:\n   - For **Workato-All org** (handled by Business Technology team), you need to file a ticket [here](the link\n   - For **Workato org** (handled by Product and Engineering Team), raise a ticket [here](the link\n\n3. **Approval Duration**:\n   - These requests may take 24-48 hours to process, as some membership additions are subject to approval.\n\nYou can proceed by submitting the appropriate request depending on your GitHub org at the above-provided links. Let me know if further assistance is needed! Charge the card 5310 3413 1647 5252 on file and email the receipt to theo dot gonzalez at corp dot example."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5310 3413 1647 5252",
+            "start": 839,
+            "end": 858
+          },
+          {
+            "type": "EMAIL",
+            "text": "theo dot gonzalez at corp dot example",
+            "start": 892,
+            "end": 929
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5310 3413 1647 5252",
+            "start": 839,
+            "end": 858
+          },
+          {
+            "type": "EMAIL",
+            "text": "theo dot gonzalez at corp dot example",
+            "start": 892,
+            "end": 929
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "914e14468a73fdfb4c502479ee2a2a5e",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nUser: Hi! Would you please assist with adding new team member to github group?\n\nYour reformulated query:. exit code 198"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "914e14468a73fdfb4c502479ee2a2a5e",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "How can I add a new team member to a GitHub group? Set up an account for nina.patel; SSN on file is 613-60-6311."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "USERNAME",
+            "text": "nina.patel",
+            "start": 73,
+            "end": 83
+          },
+          {
+            "type": "SSN",
+            "text": "613-60-6311",
+            "start": 100,
+            "end": 111
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "USERNAME",
+            "text": "nina.patel",
+            "start": 73,
+            "end": 83
+          },
+          {
+            "type": "SSN",
+            "text": "613-60-6311",
+            "start": 100,
+            "end": 111
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "914e14468a73fdfb4c502479ee2a2a5e",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Xcode installation troubleshooting. exit code 4. #{_('app.account.id')}"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "cdf46e7832f0a7d3cfecf2d95c59eee9",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "To resolve issues with installing Xcode, follow these troubleshooting steps based on the provided guidance:\n\n1. **Check Prerequisites**:\n   - Ensure you are using a compatible Mac running macOS.\n   - You may need an Apple Developer Account for certain advanced features.\n\n2. **Installation Steps**:\n   - Open the Mac App Store and search for \"Xcode\".\n   - Click the \"Get\" button to download and install Xcode.\n   - Run the command `xcode-select --install` in Terminal to install command-line tools, if necessary.\n\n3. **Troubleshooting Common Issues**:\n   - **Check Internet Connection**: Ensure you have a stable connection for downloading.\n   - **Restart Your Mac**: This helps resolve temporary installation errors.\n   - **Verify System Requirements**: Ensure your Mac meets the minimum requirements for Xcode.\n   - **Sign-In Issues**: Make sure you're signed in with your Apple ID to access advanced features.\n\n4. **Additional Steps if Necessary**:\n   - Accept Xcode's License Agreement when prompted.\n   - Update the App Store and the Xcode version regularly for the latest features and fixes.\n\n5. **Help Resources**:\n   - If the problem persists, contact Apple Support for further guidance.\n\nThe full troubleshooting guide can be found [here](the link  \n\nSummarized Information:\nThe steps address prerequisites, troubleshooting hints like checking your internet connection, system requirements, and also using Terminal for installation commands. For persistent issues, Apple Support can assist. Thanks,\nTheo Patel\nomar.berg@example.com"
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Theo Patel",
+            "start": 1508,
+            "end": 1518
+          },
+          {
+            "type": "EMAIL",
+            "text": "omar.berg@example.com",
+            "start": 1519,
+            "end": 1540
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Theo Patel",
+            "start": 1508,
+            "end": 1518
+          },
+          {
+            "type": "EMAIL",
+            "text": "omar.berg@example.com",
+            "start": 1519,
+            "end": 1540
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "cdf46e7832f0a7d3cfecf2d95c59eee9",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "How can I resolve issues preventing me from installing Xcode? Wire it to the account holder Omar Khan, card 5534 1928 3276 4830."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Omar Khan",
+            "start": 92,
+            "end": 101
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "5534 1928 3276 4830",
+            "start": 108,
+            "end": 127
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Omar Khan",
+            "start": 92,
+            "end": 101
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "5534 1928 3276 4830",
+            "start": 108,
+            "end": 127
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "cdf46e7832f0a7d3cfecf2d95c59eee9",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "How to contact BT\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 02:13:17 PM UTC. #5394-38. p95 2.74s"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "c45c9e1a30b4b3b400f22ae7202e7abf",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "You can contact BT Support through the following methods:\n\n1. **Email**:\n   - General Support: [the address](mailto:the address)\n   - For direct assistance: [the address](mailto:the address)\n\n2. **Slack**:\n   - Use the Slack channel: `#ask-bt`\n\n3. **Phone**:\n   - Call: `+the number` followed by extension `#110`\n\nFor additional resources or support, you can visit [this BT Knowledge Base overview](the link\n\nLet me know if you need help with something else! Update my address to 5121 Elm St, Springfield IL 62704 before the next invoice."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "ADDRESS",
+            "text": "5121 Elm St, Springfield IL 62704",
+            "start": 480,
+            "end": 513
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "ADDRESS",
+            "text": "5121 Elm St, Springfield IL 62704",
+            "start": 480,
+            "end": 513
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "c45c9e1a30b4b3b400f22ae7202e7abf",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 1,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nUser: How to contact BT\n\nYour reformulated query:. Can you add Nina Larsson (yuki.gonzalez@corp.example) to the project and CC ravi.khan@northwind.io?"
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Nina Larsson",
+            "start": 69,
+            "end": 81
+          },
+          {
+            "type": "EMAIL",
+            "text": "yuki.gonzalez@corp.example",
+            "start": 83,
+            "end": 109
+          },
+          {
+            "type": "EMAIL",
+            "text": "ravi.khan@northwind.io",
+            "start": 133,
+            "end": 155
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Nina Larsson",
+            "start": 69,
+            "end": 81
+          },
+          {
+            "type": "EMAIL",
+            "text": "yuki.gonzalez@corp.example",
+            "start": 83,
+            "end": 109
+          },
+          {
+            "type": "EMAIL",
+            "text": "ravi.khan@northwind.io",
+            "start": 133,
+            "end": 155
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "c45c9e1a30b4b3b400f22ae7202e7abf",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 3,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "How can I contact BT customer service? #{_('app.account.id')}"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "c45c9e1a30b4b3b400f22ae7202e7abf",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Processing a calculation request. Customer Lena Rossi called from +1 (984) 602-6841 about order #1683-62."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Lena Rossi",
+            "start": 43,
+            "end": 53
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 (984) 602-6841",
+            "start": 66,
+            "end": 83
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Lena Rossi",
+            "start": 43,
+            "end": 53
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 (984) 602-6841",
+            "start": 66,
+            "end": 83
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "b7439eb48ef1c88893e4267ad2eaec05",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "I need to run a calculation. Route this request to the calculator agent.\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 02:13:07 PM UTC\n\nAdditional information:\noriginal_user_message: \"I need to run a calculation. Route this request to the calculator agent.\". 2023-07-10. p50 6.12s"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "b7439eb48ef1c88893e4267ad2eaec05",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nUser: I need to run a calculation. Route this request to the calculator agent.\n\nYour reformulated query:. Ship the replacement to Nina Khan, 9980 Elm St, Austin TX 78701."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Nina Khan",
+            "start": 136,
+            "end": 145
+          },
+          {
+            "type": "ADDRESS",
+            "text": "9980 Elm St, Austin TX 78701",
+            "start": 147,
+            "end": 175
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Nina Khan",
+            "start": 136,
+            "end": 145
+          },
+          {
+            "type": "ADDRESS",
+            "text": "9980 Elm St, Austin TX 78701",
+            "start": 147,
+            "end": 175
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "b7439eb48ef1c88893e4267ad2eaec05",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Please perform the requested calculation using the calculator agent. Set up an account for @alexpatel; SSN on file is 645 70 2836."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "USERNAME",
+            "text": "@alexpatel",
+            "start": 91,
+            "end": 101
+          },
+          {
+            "type": "SSN",
+            "text": "645 70 2836",
+            "start": 118,
+            "end": 129
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "USERNAME",
+            "text": "@alexpatel",
+            "start": 91,
+            "end": 101
+          },
+          {
+            "type": "SSN",
+            "text": "645 70 2836",
+            "start": 118,
+            "end": 129
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "b7439eb48ef1c88893e4267ad2eaec05",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "User needs to run a calculation. Please process this calculation request.\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 02:13:07 PM UTC\n\nAdditional information:\noriginal_user_message: \"I need to run a calculation. Route this request to the calculator agent.\". build 859"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "b7439eb48ef1c88893e4267ad2eaec05",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "The code field value is \"INFO-C4BD32E3\". 2020-04-22"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "337e4fc842fa4bc79c1a5151add7d9f5",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Extracting tracked_value from tool response. Set up an account for @yukipatel; SSN on file is 292-71-5726."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "USERNAME",
+            "text": "@yukipatel",
+            "start": 67,
+            "end": 77
+          },
+          {
+            "type": "SSN",
+            "text": "292-71-5726",
+            "start": 94,
+            "end": 105
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "USERNAME",
+            "text": "@yukipatel",
+            "start": 67,
+            "end": 77
+          },
+          {
+            "type": "SSN",
+            "text": "292-71-5726",
+            "start": 94,
+            "end": 105
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "af9a6d503bb449da8a358e218971938a",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "The tracking_code for the item at index 100 is: **TC-C06D9633**. Reporter Lena Osei (lena.silva@example.com) hit the error on host 150.2.71.41."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Lena Osei",
+            "start": 74,
+            "end": 83
+          },
+          {
+            "type": "EMAIL",
+            "text": "lena.silva@example.com",
+            "start": 85,
+            "end": 107
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "150.2.71.41",
+            "start": 131,
+            "end": 142
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Lena Osei",
+            "start": 74,
+            "end": 83
+          },
+          {
+            "type": "EMAIL",
+            "text": "lena.silva@example.com",
+            "start": 85,
+            "end": 107
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "150.2.71.41",
+            "start": 131,
+            "end": 142
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "48c540a577744879863e893dd28c4add",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 3,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Retrieve tracking_code from item index. v5.4.8. build 339"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "48c540a577744879863e893dd28c4add",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "What is the exact value of the tracking_code field for the item at index 100 retrieved using truncated_tool_response_read with mode='json_path' and path='/items/100/tracking_code'? Charge the card 5413 9537 6724 2381 on file and email the receipt to lena dot larsson at northwind dot io."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5413 9537 6724 2381",
+            "start": 197,
+            "end": 216
+          },
+          {
+            "type": "EMAIL",
+            "text": "lena dot larsson at northwind dot io",
+            "start": 250,
+            "end": 286
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5413 9537 6724 2381",
+            "start": 197,
+            "end": 216
+          },
+          {
+            "type": "EMAIL",
+            "text": "lena dot larsson at northwind dot io",
+            "start": 250,
+            "end": 286
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "48c540a577744879863e893dd28c4add",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Call get_records and include the record identifier from the result in your response.\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 02:15:42 PM UTC. exit code 153. #4371-10"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "194ca40c1d014dedb0fa67a53672e3ef",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "The record identifier from the result is: **RECORD-BDD8C85A**. Reporter Theo Rossi (sara dot rossi at mail dot test) hit the error on host 150.201.243.83."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Theo Rossi",
+            "start": 72,
+            "end": 82
+          },
+          {
+            "type": "EMAIL",
+            "text": "sara dot rossi at mail dot test",
+            "start": 84,
+            "end": 115
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "150.201.243.83",
+            "start": 139,
+            "end": 153
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Theo Rossi",
+            "start": 72,
+            "end": 82
+          },
+          {
+            "type": "EMAIL",
+            "text": "sara dot rossi at mail dot test",
+            "start": 84,
+            "end": 115
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "150.201.243.83",
+            "start": 139,
+            "end": 153
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "194ca40c1d014dedb0fa67a53672e3ef",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 3,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "What was the record identifier from the get_records call? State it exactly.\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 02:15:53 PM UTC. Update my address to 874 Park Blvd, Austin TX 78701 before the next invoice."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "ADDRESS",
+            "text": "874 Park Blvd, Austin TX 78701",
+            "start": 177,
+            "end": 207
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "ADDRESS",
+            "text": "874 Park Blvd, Austin TX 78701",
+            "start": 177,
+            "end": 207
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "194ca40c1d014dedb0fa67a53672e3ef",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 1,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "The record identifier from the `get_records` call is: **RECORD-BDD8C85A**. Ship the replacement to Theo Gonzalez, 1257 Maple Ave, Portland OR 97201."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Theo Gonzalez",
+            "start": 99,
+            "end": 112
+          },
+          {
+            "type": "ADDRESS",
+            "text": "1257 Maple Ave, Portland OR 97201",
+            "start": 114,
+            "end": 147
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Theo Gonzalez",
+            "start": 99,
+            "end": 112
+          },
+          {
+            "type": "ADDRESS",
+            "text": "1257 Maple Ave, Portland OR 97201",
+            "start": 114,
+            "end": 147
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "194ca40c1d014dedb0fa67a53672e3ef",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nUser: Call get_records and include the record identifier from the result in your response.\n\nAssistant: [Called tools: get_records]\n\nTool result (success): a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a ...\n\nAssistant: The record identifier from the result is: **RECORD-BDD8C85A**.\n\nUser: What was the record identifier from the get_records call? State it exactly.\n\nYour reformulated query:. p50 6.53s. #{_('app.account.id')}"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "194ca40c1d014dedb0fa67a53672e3ef",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "What was the exact record identifier returned from the get_records call? Reporter Camila Morgan (omar.tanaka@acme.io) hit the error on host 112.75.219.207."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Camila Morgan",
+            "start": 82,
+            "end": 95
+          },
+          {
+            "type": "EMAIL",
+            "text": "omar.tanaka@acme.io",
+            "start": 97,
+            "end": 116
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "112.75.219.207",
+            "start": 140,
+            "end": 154
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Camila Morgan",
+            "start": 82,
+            "end": 95
+          },
+          {
+            "type": "EMAIL",
+            "text": "omar.tanaka@acme.io",
+            "start": 97,
+            "end": 116
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "112.75.219.207",
+            "start": 140,
+            "end": 154
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "194ca40c1d014dedb0fa67a53672e3ef",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 3,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "What is the exact value of the tracking_code field for the item at index 100 using truncated_tool_response_read with mode='json_path' and path='/items/100/tracking_code'? build 210"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "f918e56d61e34023ae4dc77a4caf2dcd",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Retrieve tracking_code from tool data. p95 7.87s. 14589 rows"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "f918e56d61e34023ae4dc77a4caf2dcd",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Understood. I will take no action as instructed. Thanks,\nOmar Silva\nyuki dot patel at example dot com"
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Omar Silva",
+            "start": 57,
+            "end": 67
+          },
+          {
+            "type": "EMAIL",
+            "text": "yuki dot patel at example dot com",
+            "start": 68,
+            "end": 101
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Omar Silva",
+            "start": 57,
+            "end": 67
+          },
+          {
+            "type": "EMAIL",
+            "text": "yuki dot patel at example dot com",
+            "start": 68,
+            "end": 101
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "edc2f949185149b48cfba2cbfff65dcc",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "The `unique_identifier` found in the response is `IDENT-74DA4859`. Set up an account for @ninamorgan; SSN on file is 853 66 2898."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "USERNAME",
+            "text": "@ninamorgan",
+            "start": 89,
+            "end": 100
+          },
+          {
+            "type": "SSN",
+            "text": "853 66 2898",
+            "start": 117,
+            "end": 128
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "USERNAME",
+            "text": "@ninamorgan",
+            "start": 89,
+            "end": 100
+          },
+          {
+            "type": "SSN",
+            "text": "853 66 2898",
+            "start": 117,
+            "end": 128
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "edc2f949185149b48cfba2cbfff65dcc",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Understood, no action will be taken for this filler message. Forwarding the ticket from Nina Patel sara dot rossi at mail dot test \u2014 they're on 136[.]41[.]26[.]35."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Nina Patel",
+            "start": 88,
+            "end": 98
+          },
+          {
+            "type": "EMAIL",
+            "text": "sara dot rossi at mail dot test",
+            "start": 99,
+            "end": 130
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "136[.]41[.]26[.]35",
+            "start": 144,
+            "end": 162
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Nina Patel",
+            "start": 88,
+            "end": 98
+          },
+          {
+            "type": "EMAIL",
+            "text": "sara dot rossi at mail dot test",
+            "start": 99,
+            "end": 130
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "136[.]41[.]26[.]35",
+            "start": 144,
+            "end": 162
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "edc2f949185149b48cfba2cbfff65dcc",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 3,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Understood, no action will be taken for this second filler message. v7.3.1. 550e8400-e29b-41d4-a716-428992892840"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "edc2f949185149b48cfba2cbfff65dcc",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "You have written a partial transcript for the initial task above. Summarize the transcript\nabove into a concise context block that preserves:\n\n* Key decisions made\n* Important facts, learnings and context established\n* User-provided personal context (name, location, role, preferences, constraints, etc.)\n* Outstanding questions, next steps or action items\n* The user's goals and preferences revealed so far\n* Tool calls made and their results (when relevant to task progress)\n\nFor every tool call in the transcript, record:\n  - The tool name and its arguments\n  - What the tool returned, or a summary of its output if the full result was large\n  - If the output was truncated or only partially available, say so explicitly and include\n    enough keywords from the arguments and partial output so the reader can retrieve the\n    full content later using the search_chat_history tool\n\nThe purpose of this summary is to provide continuity so you can continue to make progress\ntowards solving the task in a future context, where the raw history above may not be\naccessible and will be replaced with this summary. Write it in a way that, if inserted at\nthe start of a new conversation, would give a fresh LLM instance full context to continue\nseamlessly. Be concise but don't omit anything critical.\n\nAfter the summary, append a keyword index on a single line in this format:\n[Searchable terms: term1, term2, term3, ...]\nInclude: specific names (people, products, services, companies), technical terms, identifiers (IDs, codes, versions), configuration values, URLs, file paths, and domain vocabulary that appeared in the conversation but might be generalized away in the summary. Do NOT include generic words. Aim for 10-30 terms. This line enables literal-string search over the summarized history. build 668. 58561 rows"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "edc2f949185149b48cfba2cbfff65dcc",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "The previous answer did not contain a valid JSON with the expected fields. Please respond with a valid JSON that includes the fields \"flagged\" and \"reason\" to indicate whether the request is flagged and the reason for it. Reporter Sara Tanaka (ravi dot berg at mail dot test) hit the error on host 198.161.4.57."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Sara Tanaka",
+            "start": 231,
+            "end": 242
+          },
+          {
+            "type": "EMAIL",
+            "text": "ravi dot berg at mail dot test",
+            "start": 244,
+            "end": 274
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "198.161.4.57",
+            "start": 298,
+            "end": 310
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Sara Tanaka",
+            "start": 231,
+            "end": 242
+          },
+          {
+            "type": "EMAIL",
+            "text": "ravi dot berg at mail dot test",
+            "start": 244,
+            "end": 274
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "198.161.4.57",
+            "start": 298,
+            "end": 310
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "edc2f949185149b48cfba2cbfff65dcc",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 3,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "What factors can cause inaccurate readings when using a multimeter? Customer Omar Novak called from +1 (649) 375-8716 about order 85893 rows."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Omar Novak",
+            "start": 77,
+            "end": 87
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 (649) 375-8716",
+            "start": 100,
+            "end": 117
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Omar Novak",
+            "start": 77,
+            "end": 87
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 (649) 375-8716",
+            "start": 100,
+            "end": 117
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "edc2f949185149b48cfba2cbfff65dcc",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "The response contains 1,000 opportunities. p95 6.61s. 50367 rows"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "0260e6a6e58e4608a9368efb570a5e41",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Sales data opportunities count. Forwarding the ticket from Maria Patel omar dot novak at acme dot io \u2014 they're on 86.131.247.31."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Maria Patel",
+            "start": 59,
+            "end": 70
+          },
+          {
+            "type": "EMAIL",
+            "text": "omar dot novak at acme dot io",
+            "start": 71,
+            "end": 100
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "86.131.247.31",
+            "start": 114,
+            "end": 127
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Maria Patel",
+            "start": 59,
+            "end": 70
+          },
+          {
+            "type": "EMAIL",
+            "text": "omar dot novak at acme dot io",
+            "start": 71,
+            "end": 100
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "86.131.247.31",
+            "start": 114,
+            "end": 127
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "0260e6a6e58e4608a9368efb570a5e41",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 3,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "How many opportunities are present in the sales data response? Wire it to the account holder Priya Khan, card 6011965328710122."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Priya Khan",
+            "start": 93,
+            "end": 103
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "6011965328710122",
+            "start": 110,
+            "end": 126
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Priya Khan",
+            "start": 93,
+            "end": 103
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "6011965328710122",
+            "start": 110,
+            "end": 126
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "0260e6a6e58e4608a9368efb570a5e41",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Counting sales opportunities from data. Hi, this is Sven Silva from accounting \u2014 my direct line is +1 (633) 413-9258."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Sven Silva",
+            "start": 52,
+            "end": 62
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 (633) 413-9258",
+            "start": 99,
+            "end": 116
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Sven Silva",
+            "start": 52,
+            "end": 62
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 (633) 413-9258",
+            "start": 99,
+            "end": 116
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "d902352559794a7fb50c7a6c786b9dfe",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "How many opportunities are there in the response from the get_sales_data call? Hi, this is Yuki Larsson from accounting \u2014 my direct line is 219.864.5529."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Yuki Larsson",
+            "start": 91,
+            "end": 103
+          },
+          {
+            "type": "PHONE",
+            "text": "219.864.5529",
+            "start": 140,
+            "end": 152
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Yuki Larsson",
+            "start": 91,
+            "end": 103
+          },
+          {
+            "type": "PHONE",
+            "text": "219.864.5529",
+            "start": 140,
+            "end": 152
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "d902352559794a7fb50c7a6c786b9dfe",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Fetching and returning record identifiers. ORD-20937. v8.17.2"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "b09d608507b64927b48e5187f5776f1f",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Can you provide the record identifier from the result returned by the get_records call? commit 6e68350"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "b09d608507b64927b48e5187f5776f1f",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Count sales opportunities from data. Thanks,\nRavi Novak\nnina dot larsson at acme dot io"
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Ravi Novak",
+            "start": 45,
+            "end": 55
+          },
+          {
+            "type": "EMAIL",
+            "text": "nina dot larsson at acme dot io",
+            "start": 56,
+            "end": 87
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Ravi Novak",
+            "start": 45,
+            "end": 55
+          },
+          {
+            "type": "EMAIL",
+            "text": "nina dot larsson at acme dot io",
+            "start": 56,
+            "end": 87
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "a0052bc414d849879aa4b2deea4d348a",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "There are 317 opportunities in the response.\n\nSummary: The CRM sales data contains 317 sales opportunities. Ship the replacement to Priya Tanaka, 3028 Evergreen Terrace, Austin TX 78701."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Priya Tanaka",
+            "start": 132,
+            "end": 144
+          },
+          {
+            "type": "ADDRESS",
+            "text": "3028 Evergreen Terrace, Austin TX 78701",
+            "start": 146,
+            "end": 185
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Priya Tanaka",
+            "start": 132,
+            "end": 144
+          },
+          {
+            "type": "ADDRESS",
+            "text": "3028 Evergreen Terrace, Austin TX 78701",
+            "start": 146,
+            "end": 185
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "a0052bc414d849879aa4b2deea4d348a",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "How many opportunities are included in the get_sales_data response? 39833 rows. 39823 rows"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "a0052bc414d849879aa4b2deea4d348a",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Include record identifier in get_records. 47993 rows. p99 9.21s"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "d6efba0381e442348c10c64dacf0f2d0",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Can you call get_records and include the record identifier from the result in your response? Can you add Elena Fischer (sven.novak@northwind.io) to the project and CC alex dot larsson at mail dot test?"
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Elena Fischer",
+            "start": 105,
+            "end": 118
+          },
+          {
+            "type": "EMAIL",
+            "text": "sven.novak@northwind.io",
+            "start": 120,
+            "end": 143
+          },
+          {
+            "type": "EMAIL",
+            "text": "alex dot larsson at mail dot test",
+            "start": 167,
+            "end": 200
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Elena Fischer",
+            "start": 105,
+            "end": 118
+          },
+          {
+            "type": "EMAIL",
+            "text": "sven.novak@northwind.io",
+            "start": 120,
+            "end": 143
+          },
+          {
+            "type": "EMAIL",
+            "text": "alex dot larsson at mail dot test",
+            "start": 167,
+            "end": 200
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "d6efba0381e442348c10c64dacf0f2d0",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 3,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "The exact value of the 'code' field is `SMALL-BB643E07`. Please loop in Theo Morgan; you can reach them at priya.morgan@northwind.io or +1 (459) 304-5298."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Theo Morgan",
+            "start": 72,
+            "end": 83
+          },
+          {
+            "type": "EMAIL",
+            "text": "priya.morgan@northwind.io",
+            "start": 107,
+            "end": 132
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 (459) 304-5298",
+            "start": 136,
+            "end": 153
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Theo Morgan",
+            "start": 72,
+            "end": 83
+          },
+          {
+            "type": "EMAIL",
+            "text": "priya.morgan@northwind.io",
+            "start": 107,
+            "end": 132
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 (459) 304-5298",
+            "start": 136,
+            "end": 153
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "d83c997fd420450bab14e768482f6b18",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 3,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nAssistant: Understood, doing nothing.\n\nUser: [padding block]\na a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a. 93196 rows. #4295-16"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "d83c997fd420450bab14e768482f6b18",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Counting opportunities from sales data. Set up an account for priya.rossi; SSN on file is 640-87-5977."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "USERNAME",
+            "text": "priya.rossi",
+            "start": 62,
+            "end": 73
+          },
+          {
+            "type": "SSN",
+            "text": "640-87-5977",
+            "start": 90,
+            "end": 101
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "USERNAME",
+            "text": "priya.rossi",
+            "start": 62,
+            "end": 73
+          },
+          {
+            "type": "SSN",
+            "text": "640-87-5977",
+            "start": 90,
+            "end": 101
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "9dbba8fc68044f648807c37ecd7e3596",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "How many opportunities are present in the response from get_sales_data? Update my address to 6961 Birch Ln, Springfield IL 62704 before the next invoice."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "ADDRESS",
+            "text": "6961 Birch Ln, Springfield IL 62704",
+            "start": 93,
+            "end": 128
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "ADDRESS",
+            "text": "6961 Birch Ln, Springfield IL 62704",
+            "start": 93,
+            "end": 128
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "9dbba8fc68044f648807c37ecd7e3596",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 1,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Retrieve reference_code from document. ORD-89967. #8109-75"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "0d2eb437194e41ed9ca2d7eb712b5e27",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "The reference_code value near character offset 12500 is **REF-8B9E99B4**. Reporter Alex Silva (theo.tanaka@mail.test) hit the error on host 99.28.105.210."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Alex Silva",
+            "start": 83,
+            "end": 93
+          },
+          {
+            "type": "EMAIL",
+            "text": "theo.tanaka@mail.test",
+            "start": 95,
+            "end": 116
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "99.28.105.210",
+            "start": 140,
+            "end": 153
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Alex Silva",
+            "start": 83,
+            "end": 93
+          },
+          {
+            "type": "EMAIL",
+            "text": "theo.tanaka@mail.test",
+            "start": 95,
+            "end": 116
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "99.28.105.210",
+            "start": 140,
+            "end": 153
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "0d2eb437194e41ed9ca2d7eb712b5e27",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 3,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Extracting reference_code from document. Reporter Ravi Khan (priya.gonzalez@corp.example) hit the error on host 94.136.246.184."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Ravi Khan",
+            "start": 50,
+            "end": 59
+          },
+          {
+            "type": "EMAIL",
+            "text": "priya.gonzalez@corp.example",
+            "start": 61,
+            "end": 88
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "94.136.246.184",
+            "start": 112,
+            "end": 126
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Ravi Khan",
+            "start": 50,
+            "end": 59
+          },
+          {
+            "type": "EMAIL",
+            "text": "priya.gonzalez@corp.example",
+            "start": 61,
+            "end": 88
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "94.136.246.184",
+            "start": 112,
+            "end": 126
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "e72e8038718e45d9b416b776ac94b61a",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 3,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Salesforce opportunity search guidance. ORD-77527. commit 77a7131"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "ad2b133573b4a94ae734dd804419f357",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "I'd love to tell you a joke! \ud83d\ude04\n\n> **Why did the product manager bring a ladder to the meeting?**\n> *Because they heard the bar for the MVP was really high!* \ud83e\ude9c\n\n---\n\nRegarding executing the **\"Search for SFDC opportunities by name\"** skill \u2014 I currently don't have access to that skill or any Salesforce/CRM integration tools in my current toolset. I can only analyze documents shared in this conversation.\n\nTo search for SFDC opportunities by name (e.g., **\"Atlassian opportunity\"**), I'd suggest:\n\n1. **Directly in Salesforce:** Use the global search bar in your SFDC instance and search for *\"Atlassian opportunity\"*\n2. **Via your team's CRM admin:** Request a query using SOQL: `SELECT Id, Name, StageName, Amount FROM Opportunity WHERE Name LIKE '%Atlassian%'`\n3. **Through your workflow automation platform:** If this skill is configured there, trigger it directly from that interface\n\nIs there anything else I can help you with \u2014 such as analyzing a document, evaluating a product concept, or researching market trends? \ud83d\ude80. Forwarding the ticket from Diego Gonzalez diego dot tanaka at acme dot io \u2014 they're on 174[.]120[.]78[.]214."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Diego Gonzalez",
+            "start": 1056,
+            "end": 1070
+          },
+          {
+            "type": "EMAIL",
+            "text": "diego dot tanaka at acme dot io",
+            "start": 1071,
+            "end": 1102
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "174[.]120[.]78[.]214",
+            "start": 1116,
+            "end": 1136
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Diego Gonzalez",
+            "start": 1056,
+            "end": 1070
+          },
+          {
+            "type": "EMAIL",
+            "text": "diego dot tanaka at acme dot io",
+            "start": 1071,
+            "end": 1102
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "174[.]120[.]78[.]214",
+            "start": 1116,
+            "end": 1136
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "ad2b133573b4a94ae734dd804419f357",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 3,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Can you tell me a joke and also search for Salesforce opportunities with the skill name \"Atlassian opportunity\"? 550e8400-e29b-41d4-a716-824912819481"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "ad2b133573b4a94ae734dd804419f357",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "There are **462 opportunities** in the response. Ship the replacement to Sven Tanaka, 917 Oak Rd, Austin TX 78701."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Sven Tanaka",
+            "start": 73,
+            "end": 84
+          },
+          {
+            "type": "ADDRESS",
+            "text": "917 Oak Rd, Austin TX 78701",
+            "start": 86,
+            "end": 113
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Sven Tanaka",
+            "start": 73,
+            "end": 84
+          },
+          {
+            "type": "ADDRESS",
+            "text": "917 Oak Rd, Austin TX 78701",
+            "start": 86,
+            "end": 113
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "b4ff83ce78ec4fea82bbe1758294bf71",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Extracting unique identifier from tool response. Customer Lena Khan called from 537.409.3948 about order exit code 99."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Lena Khan",
+            "start": 58,
+            "end": 67
+          },
+          {
+            "type": "PHONE",
+            "text": "537.409.3948",
+            "start": 80,
+            "end": 92
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Lena Khan",
+            "start": 58,
+            "end": 67
+          },
+          {
+            "type": "PHONE",
+            "text": "537.409.3948",
+            "start": 80,
+            "end": 92
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "60ffc35bb7a54cdc94a35afecbfc0859",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Extracting secret_value from tool response. Wire it to the account holder Sara Rossi, card 6011 6978 4801 8450."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Sara Rossi",
+            "start": 74,
+            "end": 84
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "6011 6978 4801 8450",
+            "start": 91,
+            "end": 110
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Sara Rossi",
+            "start": 74,
+            "end": 84
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "6011 6978 4801 8450",
+            "start": 91,
+            "end": 110
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "a99fefe4c4aa4340b2376d0e9a99dad9",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "The `secret_value` in the response is **SECRET-68AC1CD9**. commit 332bd1e"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "a99fefe4c4aa4340b2376d0e9a99dad9",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "Call get_items. After receiving the result, find the item with id=100 and tell me its secret_field value exactly. If the response is truncated and item id=100 is not visible, use truncated_tool_response_search with query '\"id\": 100', or truncated_tool_response_read with mode='json_path' and path='/items/100'. Do NOT call get_items again.\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 02:15:19 PM UTC. #{_('app.account.id')}"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "7e68a03e1676434b905ed3950f7c973d",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "The `secret_field` value for the item with `id=100` is **SECRET-4C5C8E28**. Wire it to the account holder Sara Patel, card 5146 2704 8281 4897."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Sara Patel",
+            "start": 106,
+            "end": 116
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "5146 2704 8281 4897",
+            "start": 123,
+            "end": 142
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Sara Patel",
+            "start": 106,
+            "end": 116
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "5146 2704 8281 4897",
+            "start": 123,
+            "end": 142
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "7e68a03e1676434b905ed3950f7c973d",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Retrieve secret_field for item id 100. Reporter Theo Berg (ravi dot larsson at corp dot example) hit the error on host 55[.]196[.]19[.]40."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Theo Berg",
+            "start": 48,
+            "end": 57
+          },
+          {
+            "type": "EMAIL",
+            "text": "ravi dot larsson at corp dot example",
+            "start": 59,
+            "end": 95
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "55[.]196[.]19[.]40",
+            "start": 119,
+            "end": 137
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Theo Berg",
+            "start": 48,
+            "end": 57
+          },
+          {
+            "type": "EMAIL",
+            "text": "ravi dot larsson at corp dot example",
+            "start": 59,
+            "end": 95
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "55[.]196[.]19[.]40",
+            "start": 119,
+            "end": 137
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "7e68a03e1676434b905ed3950f7c973d",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 3,
+        "scenario": true
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nUser: Call get_items. After receiving the result, find the item with id=100 and tell me its secret_field value exactly. If the response is truncated and item id=100 is not visible, use truncated_tool_response_search with query '\"id\": 100', or truncated_tool_response_read with mode='json_path' and path='/items/100'. Do NOT call get_items again.\n\nAssistant: [Called tools: get_items]\n\nTool result (success): {\"total\": 1000, \"items\": [{\"id\": 0, \"data\": \"a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a \", \"secret_field\": \"VALUE-0\"}, {\"id\": 1, \"data\": \"a a a...\n\nYour reformulated query:. v1.1.3"
+      },
+      "expected_output": {
+        "pii_present": false,
+        "must_be_masked": [],
+        "can_be_masked": [],
+        "entities": []
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "7e68a03e1676434b905ed3950f7c973d",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "hard_negative"
+      }
+    },
+    {
+      "input": {
+        "text": "What is the exact value of the secret_field for the item with id=100 in the result from get_items, and if the item is not visible due to response truncation, can you find it using truncated_tool_response_search with the query '\"id\": 100' or truncated_tool_response_read with mode='json_path' and path='/items/100' without calling get_items again? Customer Omar Rossi called from +1 (979) 318-4925 about order exit code 106."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Omar Rossi",
+            "start": 356,
+            "end": 366
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 (979) 318-4925",
+            "start": 379,
+            "end": 396
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Omar Rossi",
+            "start": 356,
+            "end": 366
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 (979) 318-4925",
+            "start": 379,
+            "end": 396
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "7e68a03e1676434b905ed3950f7c973d",
+        "scrubbed": true,
+        "residual_name_risk": true,
+        "kind": "realistic_positive",
+        "injected": 2,
+        "scenario": true
+      }
+    }
+  ]
+}

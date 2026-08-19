@@ -1,0 +1,5449 @@
+{
+  "dataset_name": "guardrails/pii-injected-v1",
+  "items": [
+    {
+      "input": {
+        "text": "Parallel calculations with multiple calculators The card is 5104 3321 8196 0015. Charge 5338 9083 8637 9404 please."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5104 3321 8196 0015",
+            "start": 60,
+            "end": 79
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "5338 9083 8637 9404",
+            "start": 88,
+            "end": 107
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5104 3321 8196 0015",
+            "start": 60,
+            "end": 79
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "5338 9083 8637 9404",
+            "start": 88,
+            "end": 107
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "e29ee1e6fafd051286c50f1f3e3e0b06",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Performing specified calculation Connect to 92.218.60.125. SSN on file: 770-25-6668."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "92.218.60.125",
+            "start": 44,
+            "end": 57
+          },
+          {
+            "type": "SSN",
+            "text": "770-25-6668",
+            "start": 72,
+            "end": 83
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "92.218.60.125",
+            "start": 44,
+            "end": 57
+          },
+          {
+            "type": "SSN",
+            "text": "770-25-6668",
+            "start": 72,
+            "end": 83
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "e29ee1e6fafd051286c50f1f3e3e0b06",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Parallel execution of two calculations My handle is nberg96. Login as ysilva23. My address is 5846 Oak Rd, Austin, TX 78701."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "USERNAME",
+            "text": "nberg96",
+            "start": 52,
+            "end": 59
+          },
+          {
+            "type": "USERNAME",
+            "text": "ysilva23",
+            "start": 70,
+            "end": 78
+          },
+          {
+            "type": "ADDRESS",
+            "text": "5846 Oak Rd, Austin, TX 78701",
+            "start": 94,
+            "end": 123
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "USERNAME",
+            "text": "nberg96",
+            "start": 52,
+            "end": 59
+          },
+          {
+            "type": "USERNAME",
+            "text": "ysilva23",
+            "start": 70,
+            "end": 78
+          },
+          {
+            "type": "ADDRESS",
+            "text": "5846 Oak Rd, Austin, TX 78701",
+            "start": 94,
+            "end": 123
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "e29ee1e6fafd051286c50f1f3e3e0b06",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Please perform the first calculation as specified by the user.\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 01:54:45 PM UTC\n\nAdditional information:\noriginal_user_message: \"Run TWO calculations in parallel through the Parallel Middle Dispatcher: the first one via Calculator A and the second one via Calculator B. Both must run at the same time.\" Charge 5265423511615596 please. Reach me at 760-603-2774."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5265423511615596",
+            "start": 372,
+            "end": 388
+          },
+          {
+            "type": "PHONE",
+            "text": "760-603-2774",
+            "start": 409,
+            "end": 421
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5265423511615596",
+            "start": 372,
+            "end": 388
+          },
+          {
+            "type": "PHONE",
+            "text": "760-603-2774",
+            "start": 409,
+            "end": 421
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "e29ee1e6fafd051286c50f1f3e3e0b06",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nUser: Please perform the first calculation as specified by the user.\n\nYour reformulated query: Charge 5407816184959317 please. My address is 9527 Birch Ln, Springfield, IL 62704."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5407816184959317",
+            "start": 108,
+            "end": 124
+          },
+          {
+            "type": "ADDRESS",
+            "text": "9527 Birch Ln, Springfield, IL 62704",
+            "start": 147,
+            "end": 183
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5407816184959317",
+            "start": 108,
+            "end": 124
+          },
+          {
+            "type": "ADDRESS",
+            "text": "9527 Birch Ln, Springfield, IL 62704",
+            "start": 147,
+            "end": 183
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "e29ee1e6fafd051286c50f1f3e3e0b06",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "What is the first calculation you would like me to perform? My SSN is 297-31-2839. Call me on (988) 275-1802. Connect to 145.153.179.20."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "SSN",
+            "text": "297-31-2839",
+            "start": 70,
+            "end": 81
+          },
+          {
+            "type": "PHONE",
+            "text": "(988) 275-1802",
+            "start": 94,
+            "end": 108
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "145.153.179.20",
+            "start": 121,
+            "end": 135
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "SSN",
+            "text": "297-31-2839",
+            "start": 70,
+            "end": 81
+          },
+          {
+            "type": "PHONE",
+            "text": "(988) 275-1802",
+            "start": 94,
+            "end": 108
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "145.153.179.20",
+            "start": 121,
+            "end": 135
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "e29ee1e6fafd051286c50f1f3e3e0b06",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Run TWO calculations in parallel: the first one via Calculator A and the second one via Calculator B. Both must run at the same time.\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 01:54:45 PM UTC\n\nAdditional information:\noriginal_user_message: \"Run TWO calculations in parallel through the Parallel Middle Dispatcher: the first one via Calculator A and the second one via Calculator B. Both must run at the same time.\" SSN on file: 427-52-3540. My handle is ppatel38. The server is at 190.38.67.109."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "SSN",
+            "text": "427-52-3540",
+            "start": 449,
+            "end": 460
+          },
+          {
+            "type": "USERNAME",
+            "text": "ppatel38",
+            "start": 475,
+            "end": 483
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "190.38.67.109",
+            "start": 502,
+            "end": 515
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "SSN",
+            "text": "427-52-3540",
+            "start": 449,
+            "end": 460
+          },
+          {
+            "type": "USERNAME",
+            "text": "ppatel38",
+            "start": 475,
+            "end": 483
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "190.38.67.109",
+            "start": 502,
+            "end": 515
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "e29ee1e6fafd051286c50f1f3e3e0b06",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Run TWO calculations in parallel through the Parallel Middle Dispatcher: the first one via Calculator A and the second one via Calculator B. Both must run at the same time.\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 01:54:45 PM UTC Connect to 92.198.63.152. Connect to 109.10.82.102."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "92.198.63.152",
+            "start": 263,
+            "end": 276
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "109.10.82.102",
+            "start": 289,
+            "end": 302
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "92.198.63.152",
+            "start": 263,
+            "end": 276
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "109.10.82.102",
+            "start": 289,
+            "end": 302
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "e29ee1e6fafd051286c50f1f3e3e0b06",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Workato Developer API base URLs You can reach me at alex.berg@corp.example."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "EMAIL",
+            "text": "alex.berg@corp.example",
+            "start": 52,
+            "end": 74
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "EMAIL",
+            "text": "alex.berg@corp.example",
+            "start": 52,
+            "end": 74
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "0de73ec964bf5343cf5aa92a22019b97",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nadditional_ai_instruction: \n\nUser: question: What is the base URL for Workato's Developer APIs?\nexpected_answer: Based on the Workato documentation, the base URL for Workato's Developer APIs depends on which data center you're using:\nBase URLs by Data Center:\n\nUS Data Center: the link\nEU Data Center: the link\nJP Data Center: the link\nSG Data Center: the link\nAU Data Center: the link\nIL Data Center: the link\nDeveloper sandbox: the link\n\nThese base URLs are used as the foundation for all API endpoints. You'll append the specific resource path to the appropriate base URL for your data center when making API calls.\nexpected_facts: ['Base URLs depend on data center', 'US: the link 'EU: the link 'JP: the link\nactual_answer: The base URL for Workato's Developer APIs depends on your data center. Here are the URLs for each region:\n\n- US Data Center: the link\n- EU Data Center: the link\n- JP Data Center: the link\n- SG Data Center: the link\n- AU Data Center: the link\n\nChoose the base URL corresponding to your Workato workspace\u2019s data center. \n\nSummary: Workato's Developer API base URL varies by region; use the appropriate one for your data center.\n\nYour reformulated query: My handle is ntanaka43. The card is 5341-3164-7525-5342."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "USERNAME",
+            "text": "ntanaka43",
+            "start": 1199,
+            "end": 1208
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "5341-3164-7525-5342",
+            "start": 1222,
+            "end": 1241
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "USERNAME",
+            "text": "ntanaka43",
+            "start": 1199,
+            "end": 1208
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "5341-3164-7525-5342",
+            "start": 1222,
+            "end": 1241
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "0de73ec964bf5343cf5aa92a22019b97",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "What are the base URLs for Workato's Developer APIs based on different data centers or regions? The card is 5192 8327 6483 5032."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5192 8327 6483 5032",
+            "start": 108,
+            "end": 127
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5192 8327 6483 5032",
+            "start": 108,
+            "end": 127
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "0de73ec964bf5343cf5aa92a22019b97",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "question: What is the base URL for Workato's Developer APIs?\nexpected_answer: Based on the Workato documentation, the base URL for Workato's Developer APIs depends on which data center you're using:\nBase URLs by Data Center:\n\nUS Data Center: the link\nEU Data Center: the link\nJP Data Center: the link\nSG Data Center: the link\nAU Data Center: the link\nIL Data Center: the link\nDeveloper sandbox: the link\n\nThese base URLs are used as the foundation for all API endpoints. You'll append the specific resource path to the appropriate base URL for your data center when making API calls.\nexpected_facts: ['Base URLs depend on data center', 'US: the link 'EU: the link 'JP: the link\nactual_answer: The base URL for Workato's Developer APIs depends on your data center. Here are the URLs for each region:\n\n- US Data Center: the link\n- EU Data Center: the link\n- JP Data Center: the link\n- SG Data Center: the link\n- AU Data Center: the link\n\nChoose the base URL corresponding to your Workato workspace\u2019s data center. \n\nSummary: Workato's Developer API base URL varies by region; use the appropriate one for your data center.\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 01:54:40 PM UTC Login as yberg75. Please loop in Lena Silva."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "USERNAME",
+            "text": "yberg75",
+            "start": 1207,
+            "end": 1214
+          },
+          {
+            "type": "NAME",
+            "text": "Lena Silva",
+            "start": 1231,
+            "end": 1241
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "USERNAME",
+            "text": "yberg75",
+            "start": 1207,
+            "end": 1214
+          },
+          {
+            "type": "NAME",
+            "text": "Lena Silva",
+            "start": 1231,
+            "end": 1241
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "0de73ec964bf5343cf5aa92a22019b97",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Parallel calculation execution This is Lena Larsson from finance."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Lena Larsson",
+            "start": 39,
+            "end": 51
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Lena Larsson",
+            "start": 39,
+            "end": 51
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "49a99fbcf70b543e2d6f41b394f3f6cd",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Run TWO calculations in parallel: send the first one to Calculator A and the second one to Calculator B. Both calculators must work at the same time.\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 01:54:41 PM UTC Call me on +1 217 515 4303. My handle is pberg51. My name is Maria Berg."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "PHONE",
+            "text": "+1 217 515 4303",
+            "start": 240,
+            "end": 255
+          },
+          {
+            "type": "USERNAME",
+            "text": "pberg51",
+            "start": 270,
+            "end": 277
+          },
+          {
+            "type": "NAME",
+            "text": "Maria Berg",
+            "start": 290,
+            "end": 300
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "PHONE",
+            "text": "+1 217 515 4303",
+            "start": 240,
+            "end": 255
+          },
+          {
+            "type": "USERNAME",
+            "text": "pberg51",
+            "start": 270,
+            "end": 277
+          },
+          {
+            "type": "NAME",
+            "text": "Maria Berg",
+            "start": 290,
+            "end": 300
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "49a99fbcf70b543e2d6f41b394f3f6cd",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Please use a thinking skill and send me an empty message, no symbols at all.\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 01:54:40 PM UTC SSN on file: 406-29-9937. Charge 4564 1395 3767 2426 please. You can reach me at lena.tanaka@corp.example."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "SSN",
+            "text": "406-29-9937",
+            "start": 169,
+            "end": 180
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "4564 1395 3767 2426",
+            "start": 189,
+            "end": 208
+          },
+          {
+            "type": "EMAIL",
+            "text": "lena.tanaka@corp.example",
+            "start": 237,
+            "end": 261
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "SSN",
+            "text": "406-29-9937",
+            "start": 169,
+            "end": 180
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "4564 1395 3767 2426",
+            "start": 189,
+            "end": 208
+          },
+          {
+            "type": "EMAIL",
+            "text": "lena.tanaka@corp.example",
+            "start": 237,
+            "end": 261
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "fcfe53ed4bcbba4da8718c0ae187fda3",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Rename following function:\nLog message \u5408\u683c\u30e1\u30c3\u30bb\u30fc\u30b8\n\nNew translated or trasliterated function name as a string without quotes: My email is diego_tanaka@acme.io."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "EMAIL",
+            "text": "diego_tanaka@acme.io",
+            "start": 134,
+            "end": 154
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "EMAIL",
+            "text": "diego_tanaka@acme.io",
+            "start": 134,
+            "end": 154
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "d13017a9e0dd85dea57c5eb74c7b8499",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Workato RAG secret canary word My number is (408) 584-4533. Reach me at 427-987-3673."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "PHONE",
+            "text": "(408) 584-4533",
+            "start": 44,
+            "end": 58
+          },
+          {
+            "type": "PHONE",
+            "text": "427-987-3673",
+            "start": 72,
+            "end": 84
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "PHONE",
+            "text": "(408) 584-4533",
+            "start": 44,
+            "end": 58
+          },
+          {
+            "type": "PHONE",
+            "text": "427-987-3673",
+            "start": 72,
+            "end": 84
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "2efc9ffaa24a3f3202e9e8b673a18025",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "The secret canary word that is used for workato retrieval-augmented [rag] testing?\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 01:58:25 PM UTC My handle is nlarsson17."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "USERNAME",
+            "text": "nlarsson17",
+            "start": 175,
+            "end": 185
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "USERNAME",
+            "text": "nlarsson17",
+            "start": 175,
+            "end": 185
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "2efc9ffaa24a3f3202e9e8b673a18025",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "The secret canary word used for Workato retrieval-augmented [rag] testing is \"Squeamish Ossifrage\".\n\nSummary: The requested canary word for Workato RAG testing is provided. If you need more details or have another question, let me know! Reach me at (798) 636-0802."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "PHONE",
+            "text": "(798) 636-0802",
+            "start": 249,
+            "end": 263
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "PHONE",
+            "text": "(798) 636-0802",
+            "start": 249,
+            "end": 263
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "2efc9ffaa24a3f3202e9e8b673a18025",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nUser: The secret canary word that is used for workato retrieval-augmented [rag] testing?\n\nYour reformulated query: Please loop in Nina Tanaka."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Nina Tanaka",
+            "start": 136,
+            "end": 147
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Nina Tanaka",
+            "start": 136,
+            "end": 147
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "2efc9ffaa24a3f3202e9e8b673a18025",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "What is the secret canary word used for Workato retrieval-augmented generation (RAG) testing? My handle is aberg13."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "USERNAME",
+            "text": "aberg13",
+            "start": 107,
+            "end": 114
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "USERNAME",
+            "text": "aberg13",
+            "start": 107,
+            "end": 114
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "2efc9ffaa24a3f3202e9e8b673a18025",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Incident action items and Jira tracking Please loop in Camila Haddad. Ship to 8605 Park Blvd, Springfield, IL 62704."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Camila Haddad",
+            "start": 55,
+            "end": 68
+          },
+          {
+            "type": "ADDRESS",
+            "text": "8605 Park Blvd, Springfield, IL 62704",
+            "start": 78,
+            "end": 115
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Camila Haddad",
+            "start": 55,
+            "end": 68
+          },
+          {
+            "type": "ADDRESS",
+            "text": "8605 Park Blvd, Springfield, IL 62704",
+            "start": 78,
+            "end": 115
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "2be100d39b64473999df25c02f574ff8",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Give me the list of action items for incident \"20240930 - job details 404 Internal RCA\"\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 01:58:25 PM UTC My SSN is 460-27-6648."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "SSN",
+            "text": "460-27-6648",
+            "start": 177,
+            "end": 188
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "SSN",
+            "text": "460-27-6648",
+            "start": 177,
+            "end": 188
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "2be100d39b64473999df25c02f574ff8",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "The action items for the incident \"20240930 - job details 404 Internal RCA\" are captured as Jira issues and an epic. Here is the list:\n\n1. CORE-2308: the link\n2. CORE-2310: the link\n3. CORE-2311: the link\n4. CORE-2312: the link\n5. CORE-2313: the link\n\nThese are tracked under the Epic:\n- CORE-2307: the link\n\nYou can find full incident details and additional context in the RCA document: [20240930 - job details 404 Internal RCA](the link\n\nSummary: All key action items are tracked as Jira tickets and linked to an epic for the incident. If you need descriptions or ownership details, let me know! The card is 6011532871012262. This is Nina Larsson from finance. Please loop in Yuki Khan."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "6011532871012262",
+            "start": 610,
+            "end": 626
+          },
+          {
+            "type": "NAME",
+            "text": "Nina Larsson",
+            "start": 636,
+            "end": 648
+          },
+          {
+            "type": "NAME",
+            "text": "Yuki Khan",
+            "start": 678,
+            "end": 687
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "6011532871012262",
+            "start": 610,
+            "end": 626
+          },
+          {
+            "type": "NAME",
+            "text": "Nina Larsson",
+            "start": 636,
+            "end": 648
+          },
+          {
+            "type": "NAME",
+            "text": "Yuki Khan",
+            "start": 678,
+            "end": 687
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "2be100d39b64473999df25c02f574ff8",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nadditional_ai_instruction: \n\nUser: Give me the list of action items for incident \"20240930 - job details 404 Internal RCA\"\n\nYour reformulated query: My handle is tsilva53. Login as nrossi44. My email is priya_khan@example.com."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "USERNAME",
+            "text": "tsilva53",
+            "start": 168,
+            "end": 176
+          },
+          {
+            "type": "USERNAME",
+            "text": "nrossi44",
+            "start": 187,
+            "end": 195
+          },
+          {
+            "type": "EMAIL",
+            "text": "priya_khan@example.com",
+            "start": 209,
+            "end": 231
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "USERNAME",
+            "text": "tsilva53",
+            "start": 168,
+            "end": 176
+          },
+          {
+            "type": "USERNAME",
+            "text": "nrossi44",
+            "start": 187,
+            "end": 195
+          },
+          {
+            "type": "EMAIL",
+            "text": "priya_khan@example.com",
+            "start": 209,
+            "end": 231
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "2be100d39b64473999df25c02f574ff8",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "What is the list of action items for the incident titled \"20240930 - job details 404 Internal RCA\"? Charge 5166 9784 8018 4510 please. Ship to 8732 Oak Rd, Austin, TX 78701."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5166 9784 8018 4510",
+            "start": 107,
+            "end": 126
+          },
+          {
+            "type": "ADDRESS",
+            "text": "8732 Oak Rd, Austin, TX 78701",
+            "start": 143,
+            "end": 172
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5166 9784 8018 4510",
+            "start": 107,
+            "end": 126
+          },
+          {
+            "type": "ADDRESS",
+            "text": "8732 Oak Rd, Austin, TX 78701",
+            "start": 143,
+            "end": 172
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "2be100d39b64473999df25c02f574ff8",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Troubleshooting Xcode installation issues Charge 5462704828148939 please. Ship to 266 Elm St, Denver, CO 80203."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5462704828148939",
+            "start": 49,
+            "end": 65
+          },
+          {
+            "type": "ADDRESS",
+            "text": "266 Elm St, Denver, CO 80203",
+            "start": 82,
+            "end": 110
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5462704828148939",
+            "start": 49,
+            "end": 65
+          },
+          {
+            "type": "ADDRESS",
+            "text": "266 Elm St, Denver, CO 80203",
+            "start": 82,
+            "end": 110
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "03fb81bb48b569958f56650ac5615048",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Can not install xcode\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 01:58:24 PM UTC This is Priya Dubois from finance."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Priya Dubois",
+            "start": 109,
+            "end": 121
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Priya Dubois",
+            "start": 109,
+            "end": 121
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "03fb81bb48b569958f56650ac5615048",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "If you're unable to install Xcode, here are the steps and troubleshooting tips that may help:\n\n### Installation Steps for Xcode\n1. **Open the Mac App Store**:\n   - Click the App Store icon in your Dock.\n   \n2. **Search for Xcode**:\n   - Use the search bar to search for \"Xcode.\"\n\n3. **Download and Install**:\n   - Click the \u201cGet\u201d button to download Xcode.\n   - The download process may take time based on your internet connection.\n   - Open the Terminal and run the following command to install command-line tools:\n     ```bash\n     xcode-select --install\n     ```\n\n4. **Sign in with Your Apple ID (Optional)**:\n   - Sign in if prompted; this may be required for certain features.\n\n5. **Complete Installation**:\n   - Follow on-screen instructions to finish installation, including accepting license agreements.\n\n### Troubleshooting Tips\n1. **Check Internet Connection**:\n   - Ensure your connection is stable and fast enough for the Xcode download.\n\n2. **Restart Your Mac**:\n   - A restart can often resolve unresponsive app installations.\n\n3. **Check System Requirements**:\n   - Verify your Mac supports the latest version of Xcode.\n\n4. **Clear Existing Installation Traces** (if applicable):\n   - If you have any old or corrupt installations, remove them.\n\n5. **Contact Apple Support or Enterprise Support**:\n   - If none of the above resolves the issue, you may contact Apple or your Enterprise Support.\n\nFor the detailed guide, you can visit this [Install Xcode Guide](the link \n\nIf the issue persists, consider raising a ticket with your IT or Apple support team for more tailored assistance. The server is at 219.132.40.29."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "219.132.40.29",
+            "start": 1615,
+            "end": 1628
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "219.132.40.29",
+            "start": 1615,
+            "end": 1628
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "03fb81bb48b569958f56650ac5615048",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nUser: Can not install xcode\n\nYour reformulated query: This is Nina Silva from finance. Reach me at (464) 344-9864."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Nina Silva",
+            "start": 68,
+            "end": 78
+          },
+          {
+            "type": "PHONE",
+            "text": "(464) 344-9864",
+            "start": 105,
+            "end": 119
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Nina Silva",
+            "start": 68,
+            "end": 78
+          },
+          {
+            "type": "PHONE",
+            "text": "(464) 344-9864",
+            "start": 105,
+            "end": 119
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "03fb81bb48b569958f56650ac5615048",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "What steps can I take to resolve issues preventing the installation of Xcode? My address is 2642 Maple Ave, Springfield, IL 62704. Call me on (411) 779-1098. Login as pnovak43."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "ADDRESS",
+            "text": "2642 Maple Ave, Springfield, IL 62704",
+            "start": 92,
+            "end": 129
+          },
+          {
+            "type": "PHONE",
+            "text": "(411) 779-1098",
+            "start": 142,
+            "end": 156
+          },
+          {
+            "type": "USERNAME",
+            "text": "pnovak43",
+            "start": 167,
+            "end": 175
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "ADDRESS",
+            "text": "2642 Maple Ave, Springfield, IL 62704",
+            "start": 92,
+            "end": 129
+          },
+          {
+            "type": "PHONE",
+            "text": "(411) 779-1098",
+            "start": 142,
+            "end": 156
+          },
+          {
+            "type": "USERNAME",
+            "text": "pnovak43",
+            "start": 167,
+            "end": 175
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "03fb81bb48b569958f56650ac5615048",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Rename following function:\nGet-User-Details\n\nNew translated or trasliterated function name as a string without quotes: This is Yuki Gonzalez from finance."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Yuki Gonzalez",
+            "start": 127,
+            "end": 140
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Yuki Gonzalez",
+            "start": 127,
+            "end": 140
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "fb09d482c8bfda6d4aeea45dcf28e870",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Counting opportunities in sales data The card is 5288 0957 0154 3037."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5288 0957 0154 3037",
+            "start": 49,
+            "end": 68
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5288 0957 0154 3037",
+            "start": 49,
+            "end": 68
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "ba804d87a15b4160b3326848656fd09c",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Call get_sales_data and tell me how many opportunities are in the response.\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 01:59:20 PM UTC Reach me at 355-553-1229. Connect to 111.198.32.126."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "PHONE",
+            "text": "355-553-1229",
+            "start": 167,
+            "end": 179
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "111.198.32.126",
+            "start": 192,
+            "end": 206
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "PHONE",
+            "text": "355-553-1229",
+            "start": 167,
+            "end": 179
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "111.198.32.126",
+            "start": 192,
+            "end": 206
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "ba804d87a15b4160b3326848656fd09c",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "There are 1,000 opportunities in the response.\n\nSummary: The response from get_sales_data contains 1,000 opportunities. My address is 6178 Maple Ave, Austin, TX 78701. SSN on file: 394-20-4970. Reach me at +1 377 988 7280."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "ADDRESS",
+            "text": "6178 Maple Ave, Austin, TX 78701",
+            "start": 134,
+            "end": 166
+          },
+          {
+            "type": "SSN",
+            "text": "394-20-4970",
+            "start": 181,
+            "end": 192
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 377 988 7280",
+            "start": 206,
+            "end": 221
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "ADDRESS",
+            "text": "6178 Maple Ave, Austin, TX 78701",
+            "start": 134,
+            "end": 166
+          },
+          {
+            "type": "SSN",
+            "text": "394-20-4970",
+            "start": 181,
+            "end": 192
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 377 988 7280",
+            "start": 206,
+            "end": 221
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "ba804d87a15b4160b3326848656fd09c",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nUser: Call get_sales_data and tell me how many opportunities are in the response.\n\nAssistant: [Called tools: get_sales_data]\n\nTool result (success): {\"opportunities\": [{\"id\": 0, \"account\": \"Account-0\", \"stage\": \"Prospecting\", \"data\": \"a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a \"}, {\"id\": 1, ...\n\nYour reformulated query: My name is Nina Alvarez."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Nina Alvarez",
+            "start": 396,
+            "end": 408
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Nina Alvarez",
+            "start": 396,
+            "end": 408
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "ba804d87a15b4160b3326848656fd09c",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "How many opportunities are included in the response from get_sales_data? The card is 5227824896383469. Login as ptanaka97."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5227824896383469",
+            "start": 85,
+            "end": 101
+          },
+          {
+            "type": "USERNAME",
+            "text": "ptanaka97",
+            "start": 112,
+            "end": 121
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5227824896383469",
+            "start": 85,
+            "end": 101
+          },
+          {
+            "type": "USERNAME",
+            "text": "ptanaka97",
+            "start": 112,
+            "end": 121
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "ba804d87a15b4160b3326848656fd09c",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "API calls for tool response processing Connect to 206.170.189.49."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "206.170.189.49",
+            "start": 50,
+            "end": 64
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "206.170.189.49",
+            "start": 50,
+            "end": 64
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "a0e756090f04488b9b9307802b9c7ca2",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Regex-based serial number extraction Please loop in Alex Morgan."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Alex Morgan",
+            "start": 52,
+            "end": 63
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Alex Morgan",
+            "start": 52,
+            "end": 63
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "9950b2f7ac0543d19da2bebc3818da6e",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Ignore this trigger and do nothing.\n\n[padding block]\na a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a The server is at 34.222.246.117. Login as yberg81. You can reach me at ninasilva@example.com."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "34.222.246.117",
+            "start": 6018,
+            "end": 6032
+          },
+          {
+            "type": "USERNAME",
+            "text": "yberg81",
+            "start": 6043,
+            "end": 6050
+          },
+          {
+            "type": "EMAIL",
+            "text": "ninasilva@example.com",
+            "start": 6072,
+            "end": 6093
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "34.222.246.117",
+            "start": 6018,
+            "end": 6032
+          },
+          {
+            "type": "USERNAME",
+            "text": "yberg81",
+            "start": 6043,
+            "end": 6050
+          },
+          {
+            "type": "EMAIL",
+            "text": "ninasilva@example.com",
+            "start": 6072,
+            "end": 6093
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "6d4cf029586b47dbb94d4f1b6d8f9ac6",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Understood. No action will be taken as per your instructions. My handle is spatel93. My name is Omar Silva. My handle is ymorgan54."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "USERNAME",
+            "text": "spatel93",
+            "start": 75,
+            "end": 83
+          },
+          {
+            "type": "NAME",
+            "text": "Omar Silva",
+            "start": 96,
+            "end": 106
+          },
+          {
+            "type": "USERNAME",
+            "text": "ymorgan54",
+            "start": 121,
+            "end": 130
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "USERNAME",
+            "text": "spatel93",
+            "start": 75,
+            "end": 83
+          },
+          {
+            "type": "NAME",
+            "text": "Omar Silva",
+            "start": 96,
+            "end": 106
+          },
+          {
+            "type": "USERNAME",
+            "text": "ymorgan54",
+            "start": 121,
+            "end": 130
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "6d4cf029586b47dbb94d4f1b6d8f9ac6",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nAssistant: Acknowledged. No action taken as instructed.\n\nUser: [padding block]\na a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a The card is 5578 7133 1509 8391."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5578 7133 1509 8391",
+            "start": 6013,
+            "end": 6032
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5578 7133 1509 8391",
+            "start": 6013,
+            "end": 6032
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "6d4cf029586b47dbb94d4f1b6d8f9ac6",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "I'd be happy to tell you a joke! \ud83d\ude04\n\n> **Why did the product manager bring a ladder to the sprint meeting?**\n> *Because they heard the backlog was through the roof!* \ud83d\ude80\n\n---\n\nRegarding the **Search for SFDC opportunities by name** skill \u2014 I don't have access to execute Workato skills or external integrations directly from this conversation. I can only analyze documents shared with me and provide product research insights.\n\nTo execute that skill, you would need to:\n\n1. **Navigate to your Workato workspace** and find the skill named *\"Search for SFDC opportunities by name\"*\n2. **Run it directly** from the Workato interface with the parameter `name = \"Atlassian opportunity\"`\n3. Or trigger it via the **Workato API** if you have automation set up\n\nWould you like help with anything else \u2014 such as analyzing a document, evaluating a product concept, or researching market trends? \ud83d\ude0a Reach me at (709) 317-1191. Call me on +1 506 937 5279."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "PHONE",
+            "text": "(709) 317-1191",
+            "start": 896,
+            "end": 910
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 506 937 5279",
+            "start": 923,
+            "end": 938
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "PHONE",
+            "text": "(709) 317-1191",
+            "start": 896,
+            "end": 910
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 506 937 5279",
+            "start": 923,
+            "end": 938
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "38f1fbef63c44edb597cb985c6236006",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Searching SFDC opportunities with Workato My address is 9379 Maple Ave, Denver, CO 80203."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "ADDRESS",
+            "text": "9379 Maple Ave, Denver, CO 80203",
+            "start": 56,
+            "end": 88
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "ADDRESS",
+            "text": "9379 Maple Ave, Denver, CO 80203",
+            "start": 56,
+            "end": 88
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "38f1fbef63c44edb597cb985c6236006",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nadditional_ai_instruction: \n\nUser: Tell me a joke and execute Search for SFDC opportunities by name skill with name = Atlassian opportunity\n\nYour reformulated query: Reach me at +1 634 470 1773. My number is (738) 498-9092. Ship to 6559 Oak Rd, Springfield, IL 62704."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "PHONE",
+            "text": "+1 634 470 1773",
+            "start": 184,
+            "end": 199
+          },
+          {
+            "type": "PHONE",
+            "text": "(738) 498-9092",
+            "start": 214,
+            "end": 228
+          },
+          {
+            "type": "ADDRESS",
+            "text": "6559 Oak Rd, Springfield, IL 62704",
+            "start": 238,
+            "end": 272
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "PHONE",
+            "text": "+1 634 470 1773",
+            "start": 184,
+            "end": 199
+          },
+          {
+            "type": "PHONE",
+            "text": "(738) 498-9092",
+            "start": 214,
+            "end": 228
+          },
+          {
+            "type": "ADDRESS",
+            "text": "6559 Oak Rd, Springfield, IL 62704",
+            "start": 238,
+            "end": 272
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "38f1fbef63c44edb597cb985c6236006",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Can you tell me a joke and search for Salesforce opportunities with the skill name \"Atlassian opportunity\"? SSN on file: 172-19-2793."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "SSN",
+            "text": "172-19-2793",
+            "start": 121,
+            "end": 132
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "SSN",
+            "text": "172-19-2793",
+            "start": 121,
+            "end": 132
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "38f1fbef63c44edb597cb985c6236006",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Extract nested JSON serial value My number is +1 979 278 0958."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "PHONE",
+            "text": "+1 979 278 0958",
+            "start": 46,
+            "end": 61
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "PHONE",
+            "text": "+1 979 278 0958",
+            "start": 46,
+            "end": 61
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "a6c2a94f40934107b707bcd81a12d1cc",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "The exact serial value is: **API-24CEFF5501**. The server is at 153.54.244.88."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "153.54.244.88",
+            "start": 64,
+            "end": 77
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "153.54.244.88",
+            "start": 64,
+            "end": 77
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "a6c2a94f40934107b707bcd81a12d1cc",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Datetime formatting in English, Russian, Spanish My number is +1 947 463 7319."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "PHONE",
+            "text": "+1 947 463 7319",
+            "start": 62,
+            "end": 77
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "PHONE",
+            "text": "+1 947 463 7319",
+            "start": 62,
+            "end": 77
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "262a9cda7792979246c4662339dee2b4",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nadditional_ai_instruction: \n\nUser: tell me the current datetime in English, Russian and Spanish.\n\nRespond with the current datetime formatted in all three languages.\n\nFormat your response as:\n\nEnglish: [current datetime in English]\nRussian: [current datetime in Russian]\nSpanish: [current datetime in Spanish]\n\nFor example:\n\nEnglish: Friday, February 13, 2026 at 07:53:28 AM UTC\nRussian: \u041f\u044f\u0442\u043d\u0438\u0446\u0430, 13 \u0444\u0435\u0432\u0440\u0430\u043b\u044f 2026 \u0433\u043e\u0434\u0430, 07:53:28 \u043f\u043e UTC\nSpanish: Viernes, 13 de febrero de 2026 a las 07:53:28 UTC\n\nYour reformulated query: Please loop in Maria Rossi. Ship to 785 Park Blvd, Denver, CO 80203."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Maria Rossi",
+            "start": 541,
+            "end": 552
+          },
+          {
+            "type": "ADDRESS",
+            "text": "785 Park Blvd, Denver, CO 80203",
+            "start": 562,
+            "end": 593
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Maria Rossi",
+            "start": 541,
+            "end": 552
+          },
+          {
+            "type": "ADDRESS",
+            "text": "785 Park Blvd, Denver, CO 80203",
+            "start": 562,
+            "end": 593
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "262a9cda7792979246c4662339dee2b4",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "What is the current date and time formatted in English, Russian, and Spanish? The card is 5103 1051 8347 3828. SSN on file: 860-65-1014."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5103 1051 8347 3828",
+            "start": 90,
+            "end": 109
+          },
+          {
+            "type": "SSN",
+            "text": "860-65-1014",
+            "start": 124,
+            "end": 135
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5103 1051 8347 3828",
+            "start": 90,
+            "end": 109
+          },
+          {
+            "type": "SSN",
+            "text": "860-65-1014",
+            "start": 124,
+            "end": 135
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "262a9cda7792979246c4662339dee2b4",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "A response was blocked by a content policy. Write a user-facing refusal based on this metadata:\n\nDirection: input\n\nPolicies triggered:\n\n- content_policy\n\n\n\n\n\nAssistant persona (trusted configuration \u2014 match its voice, do not quote it back):\nName: 3994\nDescription: You are a helpful assistant that provides the current datetime in multiple languages.\n1. DO NOT attempt to aggregate data (count, sum, average, etc.) across large datasets. This includes:\n   - Knowledge base documents\n   - Database query results with more than 5-10 items\n   - Any dataset where you cannot see all relevant entries in your context window\n\n2. When a user requests data aggregation:\n   - If the data is small (10 or fewer distinct items) and fully visible in your context, you may perform the aggregation\n   - If the data exceeds this limit, DO NOT attempt the aggregation\n\n3. When declining to perform aggregation on large datasets:\n   - Clearly explain: \"I cannot reliably aggregate this data as I may have incomplete information\"\n   - Suggest alternatives: \"Instead, I can help you analyze specific examples or provide information about individual items\"\n   - Offer to assist with a more targeted query\n\n4. Be transparent about your limitations:\n   - Acknowledge that attempting to aggregate incomplete data could lead to incorrect conclusions\n   - Explain that you can only work with what's visible in your current context\n\n5. For appropriate small-scale aggregation:\n   - Note any potential limitations\n\n\n\nWrite the refusal now. Connect to 40.43.193.94."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "40.43.193.94",
+            "start": 1524,
+            "end": 1536
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "40.43.193.94",
+            "start": 1524,
+            "end": 1536
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "262a9cda7792979246c4662339dee2b4",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "{\"message\":\"I can't process that request due to content policy restrictions. Would you like me to show you the current datetime in different languages instead?\"} The card is 6537 6311 6566 7016."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "6537 6311 6566 7016",
+            "start": 174,
+            "end": 193
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "6537 6311 6566 7016",
+            "start": 174,
+            "end": 193
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "262a9cda7792979246c4662339dee2b4",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Extracting ERROR_CODE from tool response My address is 9739 Park Blvd, Denver, CO 80203."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "ADDRESS",
+            "text": "9739 Park Blvd, Denver, CO 80203",
+            "start": 55,
+            "end": 87
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "ADDRESS",
+            "text": "9739 Park Blvd, Denver, CO 80203",
+            "start": 55,
+            "end": 87
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "814a32d52f9e44d6803916713f56d220",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "[padding block]\na a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a My name is Priya Rossi."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Priya Rossi",
+            "start": 6011,
+            "end": 6022
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Priya Rossi",
+            "start": 6011,
+            "end": 6022
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "2a8b0ef80b76436a889b0c53e11f4a99",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "The exact serial number found is: `SN-23FEF3`. My address is 6837 Park Blvd, Austin, TX 78701. SSN on file: 166-98-7943. Ship to 7907 Elm St, Springfield, IL 62704."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "ADDRESS",
+            "text": "6837 Park Blvd, Austin, TX 78701",
+            "start": 61,
+            "end": 93
+          },
+          {
+            "type": "SSN",
+            "text": "166-98-7943",
+            "start": 108,
+            "end": 119
+          },
+          {
+            "type": "ADDRESS",
+            "text": "7907 Elm St, Springfield, IL 62704",
+            "start": 129,
+            "end": 163
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "ADDRESS",
+            "text": "6837 Park Blvd, Austin, TX 78701",
+            "start": 61,
+            "end": 93
+          },
+          {
+            "type": "SSN",
+            "text": "166-98-7943",
+            "start": 108,
+            "end": 119
+          },
+          {
+            "type": "ADDRESS",
+            "text": "7907 Elm St, Springfield, IL 62704",
+            "start": 129,
+            "end": 163
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "d79176c46b1947c4b2b102239233310f",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Extract exact serial number using regex Send it to lena.patel@example.com."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "EMAIL",
+            "text": "lena.patel@example.com",
+            "start": 51,
+            "end": 73
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "EMAIL",
+            "text": "lena.patel@example.com",
+            "start": 51,
+            "end": 73
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "d79176c46b1947c4b2b102239233310f",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Search SFDC opportunities by name skill The server is at 152.132.82.32. SSN on file: 804-63-7348."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "152.132.82.32",
+            "start": 57,
+            "end": 70
+          },
+          {
+            "type": "SSN",
+            "text": "804-63-7348",
+            "start": 85,
+            "end": 96
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "152.132.82.32",
+            "start": 57,
+            "end": 70
+          },
+          {
+            "type": "SSN",
+            "text": "804-63-7348",
+            "start": 85,
+            "end": 96
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "4671d60238023f02d955485a646d11fd",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Can you tell me a joke and search for Salesforce (SFDC) opportunities with the name \"Atlassian opportunity\"? SSN on file: 620-32-5285."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "SSN",
+            "text": "620-32-5285",
+            "start": 122,
+            "end": 133
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "SSN",
+            "text": "620-32-5285",
+            "start": 122,
+            "end": 133
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "4671d60238023f02d955485a646d11fd",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Sure! Here's a joke while I search for that opportunity simultaneously \ud83d\ude04\n\n**Joke:**\n> Why did the product manager bring a ladder to the meeting?\n> Because they heard the **bar** was being raised! \ud83d\ude80\n\nAnd let me look up that opportunity for you now! The server is at 18.137.38.233. SSN on file: 740-52-6827. The server is at 107.41.28.168."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "18.137.38.233",
+            "start": 265,
+            "end": 278
+          },
+          {
+            "type": "SSN",
+            "text": "740-52-6827",
+            "start": 293,
+            "end": 304
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "107.41.28.168",
+            "start": 323,
+            "end": 336
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "18.137.38.233",
+            "start": 265,
+            "end": 278
+          },
+          {
+            "type": "SSN",
+            "text": "740-52-6827",
+            "start": 293,
+            "end": 304
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "107.41.28.168",
+            "start": 323,
+            "end": 336
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "4671d60238023f02d955485a646d11fd",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "API calls for tracking code retrieval Connect to 156.184.53.32. The server is at 222.53.104.145. Charge 6011-5133-3872-6249 please."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "156.184.53.32",
+            "start": 49,
+            "end": 62
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "222.53.104.145",
+            "start": 81,
+            "end": 95
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "6011-5133-3872-6249",
+            "start": 104,
+            "end": 123
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "156.184.53.32",
+            "start": 49,
+            "end": 62
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "222.53.104.145",
+            "start": 81,
+            "end": 95
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "6011-5133-3872-6249",
+            "start": 104,
+            "end": 123
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "7fbbc2bb6efe4f5fa7d8af93535fa962",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "The third call to retrieve the `tracking_code` at `/items/200/tracking_code` did not return any data due to an access limit being reached for the provided tool response ID. My SSN is 889-43-3990."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "SSN",
+            "text": "889-43-3990",
+            "start": 183,
+            "end": 194
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "SSN",
+            "text": "889-43-3990",
+            "start": 183,
+            "end": 194
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "7fbbc2bb6efe4f5fa7d8af93535fa962",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Adding team member to GitHub group My email is svenpatel@corp.example. SSN on file: 191-32-7224."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "EMAIL",
+            "text": "svenpatel@corp.example",
+            "start": 47,
+            "end": 69
+          },
+          {
+            "type": "SSN",
+            "text": "191-32-7224",
+            "start": 84,
+            "end": 95
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "EMAIL",
+            "text": "svenpatel@corp.example",
+            "start": 47,
+            "end": 69
+          },
+          {
+            "type": "SSN",
+            "text": "191-32-7224",
+            "start": 84,
+            "end": 95
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "914e14468a73fdfb4c502479ee2a2a5e",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Hi! Would you please assist with adding new team member to github group?\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 02:13:18 PM UTC My SSN is 120-43-3903. You can reach me at alex.morgan@acme.io."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "SSN",
+            "text": "120-43-3903",
+            "start": 162,
+            "end": 173
+          },
+          {
+            "type": "EMAIL",
+            "text": "alex.morgan@acme.io",
+            "start": 195,
+            "end": 214
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "SSN",
+            "text": "120-43-3903",
+            "start": 162,
+            "end": 173
+          },
+          {
+            "type": "EMAIL",
+            "text": "alex.morgan@acme.io",
+            "start": 195,
+            "end": 214
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "914e14468a73fdfb4c502479ee2a2a5e",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "To add a new team member to a GitHub group, you can follow these instructions based on the resources available internally:\n\n1. **Determine the GitHub instance**:\n   - There are two instances mentioned: **Workato-All org** and **Workato org**. Ensure you are working within the right organization.\n\n2. **Access Requests**:\n   - For **Workato-All org** (handled by Business Technology team), you need to file a ticket [here](the link\n   - For **Workato org** (handled by Product and Engineering Team), raise a ticket [here](the link\n\n3. **Approval Duration**:\n   - These requests may take 24-48 hours to process, as some membership additions are subject to approval.\n\nYou can proceed by submitting the appropriate request depending on your GitHub org at the above-provided links. Let me know if further assistance is needed! My address is 5435 Maple Ave, Denver, CO 80203."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "ADDRESS",
+            "text": "5435 Maple Ave, Denver, CO 80203",
+            "start": 837,
+            "end": 869
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "ADDRESS",
+            "text": "5435 Maple Ave, Denver, CO 80203",
+            "start": 837,
+            "end": 869
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "914e14468a73fdfb4c502479ee2a2a5e",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nUser: Hi! Would you please assist with adding new team member to github group?\n\nYour reformulated query: You can reach me at mariatanaka@acme.io. Login as dgonzalez81. Charge 6531-7810-8013-2673 please."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "EMAIL",
+            "text": "mariatanaka@acme.io",
+            "start": 131,
+            "end": 150
+          },
+          {
+            "type": "USERNAME",
+            "text": "dgonzalez81",
+            "start": 161,
+            "end": 172
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "6531-7810-8013-2673",
+            "start": 181,
+            "end": 200
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "EMAIL",
+            "text": "mariatanaka@acme.io",
+            "start": 131,
+            "end": 150
+          },
+          {
+            "type": "USERNAME",
+            "text": "dgonzalez81",
+            "start": 161,
+            "end": 172
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "6531-7810-8013-2673",
+            "start": 181,
+            "end": 200
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "914e14468a73fdfb4c502479ee2a2a5e",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "How can I add a new team member to a GitHub group? SSN on file: 716-43-8674."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "SSN",
+            "text": "716-43-8674",
+            "start": 64,
+            "end": 75
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "SSN",
+            "text": "716-43-8674",
+            "start": 64,
+            "end": 75
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "914e14468a73fdfb4c502479ee2a2a5e",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Xcode installation troubleshooting My SSN is 256-51-1538. Login as ptanaka69. SSN on file: 308-59-1824."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "SSN",
+            "text": "256-51-1538",
+            "start": 45,
+            "end": 56
+          },
+          {
+            "type": "USERNAME",
+            "text": "ptanaka69",
+            "start": 67,
+            "end": 76
+          },
+          {
+            "type": "SSN",
+            "text": "308-59-1824",
+            "start": 91,
+            "end": 102
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "SSN",
+            "text": "256-51-1538",
+            "start": 45,
+            "end": 56
+          },
+          {
+            "type": "USERNAME",
+            "text": "ptanaka69",
+            "start": 67,
+            "end": 76
+          },
+          {
+            "type": "SSN",
+            "text": "308-59-1824",
+            "start": 91,
+            "end": 102
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "cdf46e7832f0a7d3cfecf2d95c59eee9",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "To resolve issues with installing Xcode, follow these troubleshooting steps based on the provided guidance:\n\n1. **Check Prerequisites**:\n   - Ensure you are using a compatible Mac running macOS.\n   - You may need an Apple Developer Account for certain advanced features.\n\n2. **Installation Steps**:\n   - Open the Mac App Store and search for \"Xcode\".\n   - Click the \"Get\" button to download and install Xcode.\n   - Run the command `xcode-select --install` in Terminal to install command-line tools, if necessary.\n\n3. **Troubleshooting Common Issues**:\n   - **Check Internet Connection**: Ensure you have a stable connection for downloading.\n   - **Restart Your Mac**: This helps resolve temporary installation errors.\n   - **Verify System Requirements**: Ensure your Mac meets the minimum requirements for Xcode.\n   - **Sign-In Issues**: Make sure you're signed in with your Apple ID to access advanced features.\n\n4. **Additional Steps if Necessary**:\n   - Accept Xcode's License Agreement when prompted.\n   - Update the App Store and the Xcode version regularly for the latest features and fixes.\n\n5. **Help Resources**:\n   - If the problem persists, contact Apple Support for further guidance.\n\nThe full troubleshooting guide can be found [here](the link  \n\nSummarized Information:\nThe steps address prerequisites, troubleshooting hints like checking your internet connection, system requirements, and also using Terminal for installation commands. For persistent issues, Apple Support can assist. Please loop in Lena Rossi. My email is theo.tanaka@example.com."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Lena Rossi",
+            "start": 1515,
+            "end": 1525
+          },
+          {
+            "type": "EMAIL",
+            "text": "theo.tanaka@example.com",
+            "start": 1539,
+            "end": 1562
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Lena Rossi",
+            "start": 1515,
+            "end": 1525
+          },
+          {
+            "type": "EMAIL",
+            "text": "theo.tanaka@example.com",
+            "start": 1539,
+            "end": 1562
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "cdf46e7832f0a7d3cfecf2d95c59eee9",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "How can I resolve issues preventing me from installing Xcode? Ship to 9078 Park Blvd, Springfield, IL 62704. My handle is ypatel1. My email is svenmorgan@mail.test."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "ADDRESS",
+            "text": "9078 Park Blvd, Springfield, IL 62704",
+            "start": 70,
+            "end": 107
+          },
+          {
+            "type": "USERNAME",
+            "text": "ypatel1",
+            "start": 122,
+            "end": 129
+          },
+          {
+            "type": "EMAIL",
+            "text": "svenmorgan@mail.test",
+            "start": 143,
+            "end": 163
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "ADDRESS",
+            "text": "9078 Park Blvd, Springfield, IL 62704",
+            "start": 70,
+            "end": 107
+          },
+          {
+            "type": "USERNAME",
+            "text": "ypatel1",
+            "start": 122,
+            "end": 129
+          },
+          {
+            "type": "EMAIL",
+            "text": "svenmorgan@mail.test",
+            "start": 143,
+            "end": 163
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "cdf46e7832f0a7d3cfecf2d95c59eee9",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "How to contact BT\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 02:13:17 PM UTC This is Theo Novak from finance. My handle is mrossi50."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Theo Novak",
+            "start": 105,
+            "end": 115
+          },
+          {
+            "type": "USERNAME",
+            "text": "mrossi50",
+            "start": 143,
+            "end": 151
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Theo Novak",
+            "start": 105,
+            "end": 115
+          },
+          {
+            "type": "USERNAME",
+            "text": "mrossi50",
+            "start": 143,
+            "end": 151
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "c45c9e1a30b4b3b400f22ae7202e7abf",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "You can contact BT Support through the following methods:\n\n1. **Email**:\n   - General Support: [the address](mailto:the address)\n   - For direct assistance: [the address](mailto:the address)\n\n2. **Slack**:\n   - Use the Slack channel: `#ask-bt`\n\n3. **Phone**:\n   - Call: `+the number` followed by extension `#110`\n\nFor additional resources or support, you can visit [this BT Knowledge Base overview](the link\n\nLet me know if you need help with something else! This is Yuki Rossi from finance."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Yuki Rossi",
+            "start": 467,
+            "end": 477
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Yuki Rossi",
+            "start": 467,
+            "end": 477
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "c45c9e1a30b4b3b400f22ae7202e7abf",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nUser: How to contact BT\n\nYour reformulated query: Reach me at (905) 880-0424. Connect to 54.73.144.58."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "PHONE",
+            "text": "(905) 880-0424",
+            "start": 68,
+            "end": 82
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "54.73.144.58",
+            "start": 95,
+            "end": 107
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "PHONE",
+            "text": "(905) 880-0424",
+            "start": 68,
+            "end": 82
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "54.73.144.58",
+            "start": 95,
+            "end": 107
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "c45c9e1a30b4b3b400f22ae7202e7abf",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "How can I contact BT customer service? Send it to omar.larsson@mail.test. Ship to 7703 Oak Rd, Springfield, IL 62704."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "EMAIL",
+            "text": "omar.larsson@mail.test",
+            "start": 50,
+            "end": 72
+          },
+          {
+            "type": "ADDRESS",
+            "text": "7703 Oak Rd, Springfield, IL 62704",
+            "start": 82,
+            "end": 116
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "EMAIL",
+            "text": "omar.larsson@mail.test",
+            "start": 50,
+            "end": 72
+          },
+          {
+            "type": "ADDRESS",
+            "text": "7703 Oak Rd, Springfield, IL 62704",
+            "start": 82,
+            "end": 116
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "c45c9e1a30b4b3b400f22ae7202e7abf",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Processing a calculation request Send it to diego.novak@acme.io."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "EMAIL",
+            "text": "diego.novak@acme.io",
+            "start": 44,
+            "end": 63
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "EMAIL",
+            "text": "diego.novak@acme.io",
+            "start": 44,
+            "end": 63
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "b7439eb48ef1c88893e4267ad2eaec05",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "I need to run a calculation. Route this request to the calculator agent.\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 02:13:07 PM UTC\n\nAdditional information:\noriginal_user_message: \"I need to run a calculation. Route this request to the calculator agent.\" SSN on file: 704-13-3083. Charge 5360-2606-4746-8720 please. Reach me at 273-862-9205."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "SSN",
+            "text": "704-13-3083",
+            "start": 288,
+            "end": 299
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "5360-2606-4746-8720",
+            "start": 308,
+            "end": 327
+          },
+          {
+            "type": "PHONE",
+            "text": "273-862-9205",
+            "start": 348,
+            "end": 360
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "SSN",
+            "text": "704-13-3083",
+            "start": 288,
+            "end": 299
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "5360-2606-4746-8720",
+            "start": 308,
+            "end": 327
+          },
+          {
+            "type": "PHONE",
+            "text": "273-862-9205",
+            "start": 348,
+            "end": 360
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "b7439eb48ef1c88893e4267ad2eaec05",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nUser: I need to run a calculation. Route this request to the calculator agent.\n\nYour reformulated query: My email is ninaberg@acme.io. SSN on file: 109-84-9491."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "EMAIL",
+            "text": "ninaberg@acme.io",
+            "start": 123,
+            "end": 139
+          },
+          {
+            "type": "SSN",
+            "text": "109-84-9491",
+            "start": 154,
+            "end": 165
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "EMAIL",
+            "text": "ninaberg@acme.io",
+            "start": 123,
+            "end": 139
+          },
+          {
+            "type": "SSN",
+            "text": "109-84-9491",
+            "start": 154,
+            "end": 165
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "b7439eb48ef1c88893e4267ad2eaec05",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Please perform the requested calculation using the calculator agent. Charge 5343098050097889 please. My address is 1822 Maple Ave, Springfield, IL 62704. Reach me at 269-438-8006."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5343098050097889",
+            "start": 76,
+            "end": 92
+          },
+          {
+            "type": "ADDRESS",
+            "text": "1822 Maple Ave, Springfield, IL 62704",
+            "start": 115,
+            "end": 152
+          },
+          {
+            "type": "PHONE",
+            "text": "269-438-8006",
+            "start": 166,
+            "end": 178
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5343098050097889",
+            "start": 76,
+            "end": 92
+          },
+          {
+            "type": "ADDRESS",
+            "text": "1822 Maple Ave, Springfield, IL 62704",
+            "start": 115,
+            "end": 152
+          },
+          {
+            "type": "PHONE",
+            "text": "269-438-8006",
+            "start": 166,
+            "end": 178
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "b7439eb48ef1c88893e4267ad2eaec05",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "User needs to run a calculation. Please process this calculation request.\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 02:13:07 PM UTC\n\nAdditional information:\noriginal_user_message: \"I need to run a calculation. Route this request to the calculator agent.\" My address is 8654 Oak Rd, Springfield, IL 62704. This is Omar Rossi from finance."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "ADDRESS",
+            "text": "8654 Oak Rd, Springfield, IL 62704",
+            "start": 290,
+            "end": 324
+          },
+          {
+            "type": "NAME",
+            "text": "Omar Rossi",
+            "start": 334,
+            "end": 344
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "ADDRESS",
+            "text": "8654 Oak Rd, Springfield, IL 62704",
+            "start": 290,
+            "end": 324
+          },
+          {
+            "type": "NAME",
+            "text": "Omar Rossi",
+            "start": 334,
+            "end": 344
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "b7439eb48ef1c88893e4267ad2eaec05",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "The code field value is \"INFO-C4BD32E3\". My SSN is 562-40-6191."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "SSN",
+            "text": "562-40-6191",
+            "start": 51,
+            "end": 62
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "SSN",
+            "text": "562-40-6191",
+            "start": 51,
+            "end": 62
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "337e4fc842fa4bc79c1a5151add7d9f5",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Extracting tracked_value from tool response My address is 5161 Park Blvd, Springfield, IL 62704. SSN on file: 574-60-7122."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "ADDRESS",
+            "text": "5161 Park Blvd, Springfield, IL 62704",
+            "start": 58,
+            "end": 95
+          },
+          {
+            "type": "SSN",
+            "text": "574-60-7122",
+            "start": 110,
+            "end": 121
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "ADDRESS",
+            "text": "5161 Park Blvd, Springfield, IL 62704",
+            "start": 58,
+            "end": 95
+          },
+          {
+            "type": "SSN",
+            "text": "574-60-7122",
+            "start": 110,
+            "end": 121
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "af9a6d503bb449da8a358e218971938a",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "The tracking_code for the item at index 100 is: **TC-C06D9633** You can reach me at theo.novak@example.com. My handle is mpatel6. Login as mnovak55."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "EMAIL",
+            "text": "theo.novak@example.com",
+            "start": 84,
+            "end": 106
+          },
+          {
+            "type": "USERNAME",
+            "text": "mpatel6",
+            "start": 121,
+            "end": 128
+          },
+          {
+            "type": "USERNAME",
+            "text": "mnovak55",
+            "start": 139,
+            "end": 147
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "EMAIL",
+            "text": "theo.novak@example.com",
+            "start": 84,
+            "end": 106
+          },
+          {
+            "type": "USERNAME",
+            "text": "mpatel6",
+            "start": 121,
+            "end": 128
+          },
+          {
+            "type": "USERNAME",
+            "text": "mnovak55",
+            "start": 139,
+            "end": 147
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "48c540a577744879863e893dd28c4add",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Retrieve tracking_code from item index Please loop in Nina Patel."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Nina Patel",
+            "start": 54,
+            "end": 64
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Nina Patel",
+            "start": 54,
+            "end": 64
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "48c540a577744879863e893dd28c4add",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "What is the exact value of the tracking_code field for the item at index 100 retrieved using truncated_tool_response_read with mode='json_path' and path='/items/100/tracking_code'? This is Nina Rossi from finance. SSN on file: 377-32-3069."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Nina Rossi",
+            "start": 189,
+            "end": 199
+          },
+          {
+            "type": "SSN",
+            "text": "377-32-3069",
+            "start": 227,
+            "end": 238
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Nina Rossi",
+            "start": 189,
+            "end": 199
+          },
+          {
+            "type": "SSN",
+            "text": "377-32-3069",
+            "start": 227,
+            "end": 238
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "48c540a577744879863e893dd28c4add",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Call get_records and include the record identifier from the result in your response.\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 02:15:42 PM UTC Reach me at (248) 988-7354."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "PHONE",
+            "text": "(248) 988-7354",
+            "start": 176,
+            "end": 190
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "PHONE",
+            "text": "(248) 988-7354",
+            "start": 176,
+            "end": 190
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "194ca40c1d014dedb0fa67a53672e3ef",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "The record identifier from the result is: **RECORD-BDD8C85A**. My SSN is 160-40-6419."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "SSN",
+            "text": "160-40-6419",
+            "start": 73,
+            "end": 84
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "SSN",
+            "text": "160-40-6419",
+            "start": 73,
+            "end": 84
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "194ca40c1d014dedb0fa67a53672e3ef",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "What was the record identifier from the get_records call? State it exactly.\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 02:15:53 PM UTC My email is lena.patel@example.com."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "EMAIL",
+            "text": "lena.patel@example.com",
+            "start": 167,
+            "end": 189
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "EMAIL",
+            "text": "lena.patel@example.com",
+            "start": 167,
+            "end": 189
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "194ca40c1d014dedb0fa67a53672e3ef",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "The record identifier from the `get_records` call is: **RECORD-BDD8C85A**. You can reach me at priya.larsson@acme.io."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "EMAIL",
+            "text": "priya.larsson@acme.io",
+            "start": 95,
+            "end": 116
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "EMAIL",
+            "text": "priya.larsson@acme.io",
+            "start": 95,
+            "end": 116
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "194ca40c1d014dedb0fa67a53672e3ef",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nUser: Call get_records and include the record identifier from the result in your response.\n\nAssistant: [Called tools: get_records]\n\nTool result (success): a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a ...\n\nAssistant: The record identifier from the result is: **RECORD-BDD8C85A**.\n\nUser: What was the record identifier from the get_records call? State it exactly.\n\nYour reformulated query: My email is ninagonzalez@acme.io. Ship to 6806 Elm St, Denver, CO 80203."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "EMAIL",
+            "text": "ninagonzalez@acme.io",
+            "start": 561,
+            "end": 581
+          },
+          {
+            "type": "ADDRESS",
+            "text": "6806 Elm St, Denver, CO 80203",
+            "start": 591,
+            "end": 620
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "EMAIL",
+            "text": "ninagonzalez@acme.io",
+            "start": 561,
+            "end": 581
+          },
+          {
+            "type": "ADDRESS",
+            "text": "6806 Elm St, Denver, CO 80203",
+            "start": 591,
+            "end": 620
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "194ca40c1d014dedb0fa67a53672e3ef",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "What was the exact record identifier returned from the get_records call? My SSN is 101-84-1794. Login as mgonzalez10."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "SSN",
+            "text": "101-84-1794",
+            "start": 83,
+            "end": 94
+          },
+          {
+            "type": "USERNAME",
+            "text": "mgonzalez10",
+            "start": 105,
+            "end": 116
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "SSN",
+            "text": "101-84-1794",
+            "start": 83,
+            "end": 94
+          },
+          {
+            "type": "USERNAME",
+            "text": "mgonzalez10",
+            "start": 105,
+            "end": 116
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "194ca40c1d014dedb0fa67a53672e3ef",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "What is the exact value of the tracking_code field for the item at index 100 using truncated_tool_response_read with mode='json_path' and path='/items/100/tracking_code'? My SSN is 409-29-6568."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "SSN",
+            "text": "409-29-6568",
+            "start": 181,
+            "end": 192
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "SSN",
+            "text": "409-29-6568",
+            "start": 181,
+            "end": 192
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "f918e56d61e34023ae4dc77a4caf2dcd",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Retrieve tracking_code from tool data SSN on file: 561-96-2786. Send it to lena.silva@acme.io. My handle is dberg85."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "SSN",
+            "text": "561-96-2786",
+            "start": 51,
+            "end": 62
+          },
+          {
+            "type": "EMAIL",
+            "text": "lena.silva@acme.io",
+            "start": 75,
+            "end": 93
+          },
+          {
+            "type": "USERNAME",
+            "text": "dberg85",
+            "start": 108,
+            "end": 115
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "SSN",
+            "text": "561-96-2786",
+            "start": 51,
+            "end": 62
+          },
+          {
+            "type": "EMAIL",
+            "text": "lena.silva@acme.io",
+            "start": 75,
+            "end": 93
+          },
+          {
+            "type": "USERNAME",
+            "text": "dberg85",
+            "start": 108,
+            "end": 115
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "f918e56d61e34023ae4dc77a4caf2dcd",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Understood. I will take no action as instructed. The card is 5208-1219-1361-9394."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5208-1219-1361-9394",
+            "start": 61,
+            "end": 80
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "5208-1219-1361-9394",
+            "start": 61,
+            "end": 80
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "edc2f949185149b48cfba2cbfff65dcc",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "The `unique_identifier` found in the response is `IDENT-74DA4859`. Login as skhan80. Ship to 8413 Elm St, Springfield, IL 62704."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "USERNAME",
+            "text": "skhan80",
+            "start": 76,
+            "end": 83
+          },
+          {
+            "type": "ADDRESS",
+            "text": "8413 Elm St, Springfield, IL 62704",
+            "start": 93,
+            "end": 127
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "USERNAME",
+            "text": "skhan80",
+            "start": 76,
+            "end": 83
+          },
+          {
+            "type": "ADDRESS",
+            "text": "8413 Elm St, Springfield, IL 62704",
+            "start": 93,
+            "end": 127
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "edc2f949185149b48cfba2cbfff65dcc",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Understood, no action will be taken for this filler message. Send it to mariarossi@mail.test. You can reach me at nina_novak@corp.example. The server is at 183.97.78.213."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "EMAIL",
+            "text": "mariarossi@mail.test",
+            "start": 72,
+            "end": 92
+          },
+          {
+            "type": "EMAIL",
+            "text": "nina_novak@corp.example",
+            "start": 114,
+            "end": 137
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "183.97.78.213",
+            "start": 156,
+            "end": 169
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "EMAIL",
+            "text": "mariarossi@mail.test",
+            "start": 72,
+            "end": 92
+          },
+          {
+            "type": "EMAIL",
+            "text": "nina_novak@corp.example",
+            "start": 114,
+            "end": 137
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "183.97.78.213",
+            "start": 156,
+            "end": 169
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "edc2f949185149b48cfba2cbfff65dcc",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Understood, no action will be taken for this second filler message. My SSN is 113-30-8856."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "SSN",
+            "text": "113-30-8856",
+            "start": 78,
+            "end": 89
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "SSN",
+            "text": "113-30-8856",
+            "start": 78,
+            "end": 89
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "edc2f949185149b48cfba2cbfff65dcc",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "You have written a partial transcript for the initial task above. Summarize the transcript\nabove into a concise context block that preserves:\n\n* Key decisions made\n* Important facts, learnings and context established\n* User-provided personal context (name, location, role, preferences, constraints, etc.)\n* Outstanding questions, next steps or action items\n* The user's goals and preferences revealed so far\n* Tool calls made and their results (when relevant to task progress)\n\nFor every tool call in the transcript, record:\n  - The tool name and its arguments\n  - What the tool returned, or a summary of its output if the full result was large\n  - If the output was truncated or only partially available, say so explicitly and include\n    enough keywords from the arguments and partial output so the reader can retrieve the\n    full content later using the search_chat_history tool\n\nThe purpose of this summary is to provide continuity so you can continue to make progress\ntowards solving the task in a future context, where the raw history above may not be\naccessible and will be replaced with this summary. Write it in a way that, if inserted at\nthe start of a new conversation, would give a fresh LLM instance full context to continue\nseamlessly. Be concise but don't omit anything critical.\n\nAfter the summary, append a keyword index on a single line in this format:\n[Searchable terms: term1, term2, term3, ...]\nInclude: specific names (people, products, services, companies), technical terms, identifiers (IDs, codes, versions), configuration values, URLs, file paths, and domain vocabulary that appeared in the conversation but might be generalized away in the summary. Do NOT include generic words. Aim for 10-30 terms. This line enables literal-string search over the summarized history. Ship to 6396 Elm St, Austin, TX 78701. Call me on +1 265 743 8304."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "ADDRESS",
+            "text": "6396 Elm St, Austin, TX 78701",
+            "start": 1805,
+            "end": 1834
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 265 743 8304",
+            "start": 1847,
+            "end": 1862
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "ADDRESS",
+            "text": "6396 Elm St, Austin, TX 78701",
+            "start": 1805,
+            "end": 1834
+          },
+          {
+            "type": "PHONE",
+            "text": "+1 265 743 8304",
+            "start": 1847,
+            "end": 1862
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "edc2f949185149b48cfba2cbfff65dcc",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "The previous answer did not contain a valid JSON with the expected fields. Please respond with a valid JSON that includes the fields \"flagged\" and \"reason\" to indicate whether the request is flagged and the reason for it. My address is 9261 Oak Rd, Austin, TX 78701."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "ADDRESS",
+            "text": "9261 Oak Rd, Austin, TX 78701",
+            "start": 236,
+            "end": 265
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "ADDRESS",
+            "text": "9261 Oak Rd, Austin, TX 78701",
+            "start": 236,
+            "end": 265
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "edc2f949185149b48cfba2cbfff65dcc",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "What factors can cause inaccurate readings when using a multimeter? My address is 9111 Elm St, Springfield, IL 62704. Charge 5169 9854 3534 6240 please. The card is 6551-0799-1183-8427."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "ADDRESS",
+            "text": "9111 Elm St, Springfield, IL 62704",
+            "start": 82,
+            "end": 116
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "5169 9854 3534 6240",
+            "start": 125,
+            "end": 144
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "6551-0799-1183-8427",
+            "start": 165,
+            "end": 184
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "ADDRESS",
+            "text": "9111 Elm St, Springfield, IL 62704",
+            "start": 82,
+            "end": 116
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "5169 9854 3534 6240",
+            "start": 125,
+            "end": 144
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "6551-0799-1183-8427",
+            "start": 165,
+            "end": 184
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "edc2f949185149b48cfba2cbfff65dcc",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "The response contains 1,000 opportunities. My SSN is 671-54-7740."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "SSN",
+            "text": "671-54-7740",
+            "start": 53,
+            "end": 64
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "SSN",
+            "text": "671-54-7740",
+            "start": 53,
+            "end": 64
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "0260e6a6e58e4608a9368efb570a5e41",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Sales data opportunities count My SSN is 622-74-7236. Login as dberg57."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "SSN",
+            "text": "622-74-7236",
+            "start": 41,
+            "end": 52
+          },
+          {
+            "type": "USERNAME",
+            "text": "dberg57",
+            "start": 63,
+            "end": 70
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "SSN",
+            "text": "622-74-7236",
+            "start": 41,
+            "end": 52
+          },
+          {
+            "type": "USERNAME",
+            "text": "dberg57",
+            "start": 63,
+            "end": 70
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "0260e6a6e58e4608a9368efb570a5e41",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "How many opportunities are present in the sales data response? My name is Theo Berg."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Theo Berg",
+            "start": 74,
+            "end": 83
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Theo Berg",
+            "start": 74,
+            "end": 83
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "0260e6a6e58e4608a9368efb570a5e41",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Counting sales opportunities from data You can reach me at diegolarsson@mail.test."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "EMAIL",
+            "text": "diegolarsson@mail.test",
+            "start": 59,
+            "end": 81
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "EMAIL",
+            "text": "diegolarsson@mail.test",
+            "start": 59,
+            "end": 81
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "d902352559794a7fb50c7a6c786b9dfe",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "How many opportunities are there in the response from the get_sales_data call? Send it to alex.patel@acme.io."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "EMAIL",
+            "text": "alex.patel@acme.io",
+            "start": 90,
+            "end": 108
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "EMAIL",
+            "text": "alex.patel@acme.io",
+            "start": 90,
+            "end": 108
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "d902352559794a7fb50c7a6c786b9dfe",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Fetching and returning record identifiers SSN on file: 129-34-7489. Call me on 721-576-9689."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "SSN",
+            "text": "129-34-7489",
+            "start": 55,
+            "end": 66
+          },
+          {
+            "type": "PHONE",
+            "text": "721-576-9689",
+            "start": 79,
+            "end": 91
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "SSN",
+            "text": "129-34-7489",
+            "start": 55,
+            "end": 66
+          },
+          {
+            "type": "PHONE",
+            "text": "721-576-9689",
+            "start": 79,
+            "end": 91
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "b09d608507b64927b48e5187f5776f1f",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Can you provide the record identifier from the result returned by the get_records call? Connect to 29.198.218.230."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "29.198.218.230",
+            "start": 99,
+            "end": 113
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "29.198.218.230",
+            "start": 99,
+            "end": 113
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "b09d608507b64927b48e5187f5776f1f",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Count sales opportunities from data This is Priya Silva from finance. This is Maria Patel from finance. Charge 5135427849808417 please."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Priya Silva",
+            "start": 44,
+            "end": 55
+          },
+          {
+            "type": "NAME",
+            "text": "Maria Patel",
+            "start": 78,
+            "end": 89
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "5135427849808417",
+            "start": 111,
+            "end": 127
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Priya Silva",
+            "start": 44,
+            "end": 55
+          },
+          {
+            "type": "NAME",
+            "text": "Maria Patel",
+            "start": 78,
+            "end": 89
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "5135427849808417",
+            "start": 111,
+            "end": 127
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "a0052bc414d849879aa4b2deea4d348a",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "There are 317 opportunities in the response.\n\nSummary: The CRM sales data contains 317 sales opportunities. My SSN is 146-98-8207. You can reach me at maria_morgan@acme.io."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "SSN",
+            "text": "146-98-8207",
+            "start": 118,
+            "end": 129
+          },
+          {
+            "type": "EMAIL",
+            "text": "maria_morgan@acme.io",
+            "start": 151,
+            "end": 171
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "SSN",
+            "text": "146-98-8207",
+            "start": 118,
+            "end": 129
+          },
+          {
+            "type": "EMAIL",
+            "text": "maria_morgan@acme.io",
+            "start": 151,
+            "end": 171
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "a0052bc414d849879aa4b2deea4d348a",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "How many opportunities are included in the get_sales_data response? SSN on file: 703-23-5689."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "SSN",
+            "text": "703-23-5689",
+            "start": 81,
+            "end": 92
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "SSN",
+            "text": "703-23-5689",
+            "start": 81,
+            "end": 92
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "a0052bc414d849879aa4b2deea4d348a",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Include record identifier in get_records My handle is oberg48. Charge 5241-1824-4935-3485 please."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "USERNAME",
+            "text": "oberg48",
+            "start": 54,
+            "end": 61
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "5241-1824-4935-3485",
+            "start": 70,
+            "end": 89
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "USERNAME",
+            "text": "oberg48",
+            "start": 54,
+            "end": 61
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "5241-1824-4935-3485",
+            "start": 70,
+            "end": 89
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "d6efba0381e442348c10c64dacf0f2d0",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Can you call get_records and include the record identifier from the result in your response? SSN on file: 327-29-6659."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "SSN",
+            "text": "327-29-6659",
+            "start": 106,
+            "end": 117
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "SSN",
+            "text": "327-29-6659",
+            "start": 106,
+            "end": 117
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "d6efba0381e442348c10c64dacf0f2d0",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "The exact value of the 'code' field is `SMALL-BB643E07`. Login as srossi90."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "USERNAME",
+            "text": "srossi90",
+            "start": 66,
+            "end": 74
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "USERNAME",
+            "text": "srossi90",
+            "start": 66,
+            "end": 74
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "d83c997fd420450bab14e768482f6b18",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nAssistant: Understood, doing nothing.\n\nUser: [padding block]\na a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a Call me on +1 419 789 8906. The card is 6540-1640-0524-2787."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "PHONE",
+            "text": "+1 419 789 8906",
+            "start": 6012,
+            "end": 6027
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "6540-1640-0524-2787",
+            "start": 6041,
+            "end": 6060
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "PHONE",
+            "text": "+1 419 789 8906",
+            "start": 6012,
+            "end": 6027
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "6540-1640-0524-2787",
+            "start": 6041,
+            "end": 6060
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "d83c997fd420450bab14e768482f6b18",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Counting opportunities from sales data Connect to 169.114.133.166."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "169.114.133.166",
+            "start": 50,
+            "end": 65
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "169.114.133.166",
+            "start": 50,
+            "end": 65
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "9dbba8fc68044f648807c37ecd7e3596",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "How many opportunities are present in the response from get_sales_data? My email is priyapatel@example.com. The card is 6011-8011-2805-9826."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "EMAIL",
+            "text": "priyapatel@example.com",
+            "start": 84,
+            "end": 106
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "6011-8011-2805-9826",
+            "start": 120,
+            "end": 139
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "EMAIL",
+            "text": "priyapatel@example.com",
+            "start": 84,
+            "end": 106
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "6011-8011-2805-9826",
+            "start": 120,
+            "end": 139
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "9dbba8fc68044f648807c37ecd7e3596",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Retrieve reference_code from document The server is at 183.54.49.130. Send it to priya.silva@corp.example."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "183.54.49.130",
+            "start": 55,
+            "end": 68
+          },
+          {
+            "type": "EMAIL",
+            "text": "priya.silva@corp.example",
+            "start": 81,
+            "end": 105
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "183.54.49.130",
+            "start": 55,
+            "end": 68
+          },
+          {
+            "type": "EMAIL",
+            "text": "priya.silva@corp.example",
+            "start": 81,
+            "end": 105
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "0d2eb437194e41ed9ca2d7eb712b5e27",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "The reference_code value near character offset 12500 is **REF-8B9E99B4**. My address is 5937 Maple Ave, Springfield, IL 62704."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "ADDRESS",
+            "text": "5937 Maple Ave, Springfield, IL 62704",
+            "start": 88,
+            "end": 125
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "ADDRESS",
+            "text": "5937 Maple Ave, Springfield, IL 62704",
+            "start": 88,
+            "end": 125
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "0d2eb437194e41ed9ca2d7eb712b5e27",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Extracting reference_code from document Call me on 492-298-2346. SSN on file: 385-12-7749. Ship to 1502 Birch Ln, Springfield, IL 62704."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "PHONE",
+            "text": "492-298-2346",
+            "start": 51,
+            "end": 63
+          },
+          {
+            "type": "SSN",
+            "text": "385-12-7749",
+            "start": 78,
+            "end": 89
+          },
+          {
+            "type": "ADDRESS",
+            "text": "1502 Birch Ln, Springfield, IL 62704",
+            "start": 99,
+            "end": 135
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "PHONE",
+            "text": "492-298-2346",
+            "start": 51,
+            "end": 63
+          },
+          {
+            "type": "SSN",
+            "text": "385-12-7749",
+            "start": 78,
+            "end": 89
+          },
+          {
+            "type": "ADDRESS",
+            "text": "1502 Birch Ln, Springfield, IL 62704",
+            "start": 99,
+            "end": 135
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "e72e8038718e45d9b416b776ac94b61a",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Salesforce opportunity search guidance My handle is lkhan18. Ship to 4507 Oak Rd, Denver, CO 80203. This is Alex Silva from finance."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "USERNAME",
+            "text": "lkhan18",
+            "start": 52,
+            "end": 59
+          },
+          {
+            "type": "ADDRESS",
+            "text": "4507 Oak Rd, Denver, CO 80203",
+            "start": 69,
+            "end": 98
+          },
+          {
+            "type": "NAME",
+            "text": "Alex Silva",
+            "start": 108,
+            "end": 118
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "USERNAME",
+            "text": "lkhan18",
+            "start": 52,
+            "end": 59
+          },
+          {
+            "type": "ADDRESS",
+            "text": "4507 Oak Rd, Denver, CO 80203",
+            "start": 69,
+            "end": 98
+          },
+          {
+            "type": "NAME",
+            "text": "Alex Silva",
+            "start": 108,
+            "end": 118
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "ad2b133573b4a94ae734dd804419f357",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "I'd love to tell you a joke! \ud83d\ude04\n\n> **Why did the product manager bring a ladder to the meeting?**\n> *Because they heard the bar for the MVP was really high!* \ud83e\ude9c\n\n---\n\nRegarding executing the **\"Search for SFDC opportunities by name\"** skill \u2014 I currently don't have access to that skill or any Salesforce/CRM integration tools in my current toolset. I can only analyze documents shared in this conversation.\n\nTo search for SFDC opportunities by name (e.g., **\"Atlassian opportunity\"**), I'd suggest:\n\n1. **Directly in Salesforce:** Use the global search bar in your SFDC instance and search for *\"Atlassian opportunity\"*\n2. **Via your team's CRM admin:** Request a query using SOQL: `SELECT Id, Name, StageName, Amount FROM Opportunity WHERE Name LIKE '%Atlassian%'`\n3. **Through your workflow automation platform:** If this skill is configured there, trigger it directly from that interface\n\nIs there anything else I can help you with \u2014 such as analyzing a document, evaluating a product concept, or researching market trends? \ud83d\ude80 Call me on +1 828 204 1132. My email is sven_silva@corp.example. Charge 6011204505331589 please."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "PHONE",
+            "text": "+1 828 204 1132",
+            "start": 1039,
+            "end": 1054
+          },
+          {
+            "type": "EMAIL",
+            "text": "sven_silva@corp.example",
+            "start": 1068,
+            "end": 1091
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "6011204505331589",
+            "start": 1100,
+            "end": 1116
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "PHONE",
+            "text": "+1 828 204 1132",
+            "start": 1039,
+            "end": 1054
+          },
+          {
+            "type": "EMAIL",
+            "text": "sven_silva@corp.example",
+            "start": 1068,
+            "end": 1091
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "6011204505331589",
+            "start": 1100,
+            "end": 1116
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "ad2b133573b4a94ae734dd804419f357",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Can you tell me a joke and also search for Salesforce opportunities with the skill name \"Atlassian opportunity\"? Charge 6011-9232-2602-5630 please. Charge 5421 6073 3754 3302 please. Call me on 554-567-7833."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "6011-9232-2602-5630",
+            "start": 120,
+            "end": 139
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "5421 6073 3754 3302",
+            "start": 155,
+            "end": 174
+          },
+          {
+            "type": "PHONE",
+            "text": "554-567-7833",
+            "start": 194,
+            "end": 206
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "CREDIT_CARD",
+            "text": "6011-9232-2602-5630",
+            "start": 120,
+            "end": 139
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "5421 6073 3754 3302",
+            "start": 155,
+            "end": 174
+          },
+          {
+            "type": "PHONE",
+            "text": "554-567-7833",
+            "start": 194,
+            "end": 206
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "ad2b133573b4a94ae734dd804419f357",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "There are **462 opportunities** in the response. Please loop in Alex Tanaka. My handle is msilva32."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "NAME",
+            "text": "Alex Tanaka",
+            "start": 64,
+            "end": 75
+          },
+          {
+            "type": "USERNAME",
+            "text": "msilva32",
+            "start": 90,
+            "end": 98
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "NAME",
+            "text": "Alex Tanaka",
+            "start": 64,
+            "end": 75
+          },
+          {
+            "type": "USERNAME",
+            "text": "msilva32",
+            "start": 90,
+            "end": 98
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "b4ff83ce78ec4fea82bbe1758294bf71",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Extracting unique identifier from tool response Send it to sven_larsson@mail.test. My SSN is 504-62-3481. Login as trossi93."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "EMAIL",
+            "text": "sven_larsson@mail.test",
+            "start": 59,
+            "end": 81
+          },
+          {
+            "type": "SSN",
+            "text": "504-62-3481",
+            "start": 93,
+            "end": 104
+          },
+          {
+            "type": "USERNAME",
+            "text": "trossi93",
+            "start": 115,
+            "end": 123
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "EMAIL",
+            "text": "sven_larsson@mail.test",
+            "start": 59,
+            "end": 81
+          },
+          {
+            "type": "SSN",
+            "text": "504-62-3481",
+            "start": 93,
+            "end": 104
+          },
+          {
+            "type": "USERNAME",
+            "text": "trossi93",
+            "start": 115,
+            "end": 123
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "60ffc35bb7a54cdc94a35afecbfc0859",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Extracting secret_value from tool response My handle is ssilva82."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "USERNAME",
+            "text": "ssilva82",
+            "start": 56,
+            "end": 64
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "USERNAME",
+            "text": "ssilva82",
+            "start": 56,
+            "end": 64
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "a99fefe4c4aa4340b2376d0e9a99dad9",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "The `secret_value` in the response is **SECRET-68AC1CD9**. My SSN is 660-52-3752. My SSN is 389-48-5898. Connect to 61.50.176.241."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "SSN",
+            "text": "660-52-3752",
+            "start": 69,
+            "end": 80
+          },
+          {
+            "type": "SSN",
+            "text": "389-48-5898",
+            "start": 92,
+            "end": 103
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "61.50.176.241",
+            "start": 116,
+            "end": 129
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "SSN",
+            "text": "660-52-3752",
+            "start": 69,
+            "end": 80
+          },
+          {
+            "type": "SSN",
+            "text": "389-48-5898",
+            "start": 92,
+            "end": 103
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "61.50.176.241",
+            "start": 116,
+            "end": 129
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "a99fefe4c4aa4340b2376d0e9a99dad9",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Call get_items. After receiving the result, find the item with id=100 and tell me its secret_field value exactly. If the response is truncated and item id=100 is not visible, use truncated_tool_response_search with query '\"id\": 100', or truncated_tool_response_read with mode='json_path' and path='/items/100'. Do NOT call get_items again.\n\n# Attached context\n\nCurrent time: Wednesday, June 17, 2026 at 02:15:19 PM UTC Login as mrossi73. The server is at 94.243.127.211. You can reach me at priya_berg@mail.test."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "USERNAME",
+            "text": "mrossi73",
+            "start": 428,
+            "end": 436
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "94.243.127.211",
+            "start": 455,
+            "end": 469
+          },
+          {
+            "type": "EMAIL",
+            "text": "priya_berg@mail.test",
+            "start": 491,
+            "end": 511
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "USERNAME",
+            "text": "mrossi73",
+            "start": 428,
+            "end": 436
+          },
+          {
+            "type": "IP_ADDRESS",
+            "text": "94.243.127.211",
+            "start": 455,
+            "end": 469
+          },
+          {
+            "type": "EMAIL",
+            "text": "priya_berg@mail.test",
+            "start": 491,
+            "end": 511
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "7e68a03e1676434b905ed3950f7c973d",
+        "scrubbed": true,
+        "injected": 3,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "The `secret_field` value for the item with `id=100` is **SECRET-4C5C8E28**. Login as sgonzalez84."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "USERNAME",
+            "text": "sgonzalez84",
+            "start": 85,
+            "end": 96
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "USERNAME",
+            "text": "sgonzalez84",
+            "start": 85,
+            "end": 96
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "7e68a03e1676434b905ed3950f7c973d",
+        "scrubbed": true,
+        "injected": 1,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Retrieve secret_field for item id 100 My address is 9035 Birch Ln, Denver, CO 80203. This is Priya Tanaka from finance."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "ADDRESS",
+            "text": "9035 Birch Ln, Denver, CO 80203",
+            "start": 52,
+            "end": 83
+          },
+          {
+            "type": "NAME",
+            "text": "Priya Tanaka",
+            "start": 93,
+            "end": 105
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "ADDRESS",
+            "text": "9035 Birch Ln, Denver, CO 80203",
+            "start": 52,
+            "end": 83
+          },
+          {
+            "type": "NAME",
+            "text": "Priya Tanaka",
+            "start": 93,
+            "end": 105
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "7e68a03e1676434b905ed3950f7c973d",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "Chat:\nUser: Call get_items. After receiving the result, find the item with id=100 and tell me its secret_field value exactly. If the response is truncated and item id=100 is not visible, use truncated_tool_response_search with query '\"id\": 100', or truncated_tool_response_read with mode='json_path' and path='/items/100'. Do NOT call get_items again.\n\nAssistant: [Called tools: get_items]\n\nTool result (success): {\"total\": 1000, \"items\": [{\"id\": 0, \"data\": \"a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a \", \"secret_field\": \"VALUE-0\"}, {\"id\": 1, \"data\": \"a a a...\n\nYour reformulated query: You can reach me at diegomorgan@acme.io. The card is 6011-5414-5868-5010."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "EMAIL",
+            "text": "diegomorgan@acme.io",
+            "start": 664,
+            "end": 683
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "6011-5414-5868-5010",
+            "start": 697,
+            "end": 716
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "EMAIL",
+            "text": "diegomorgan@acme.io",
+            "start": 664,
+            "end": 683
+          },
+          {
+            "type": "CREDIT_CARD",
+            "text": "6011-5414-5868-5010",
+            "start": 697,
+            "end": 716
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "7e68a03e1676434b905ed3950f7c973d",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    },
+    {
+      "input": {
+        "text": "What is the exact value of the secret_field for the item with id=100 in the result from get_items, and if the item is not visible due to response truncation, can you find it using truncated_tool_response_search with the query '\"id\": 100' or truncated_tool_response_read with mode='json_path' and path='/items/100' without calling get_items again? The server is at 91.211.76.225. Reach me at 263-633-0233."
+      },
+      "expected_output": {
+        "pii_present": true,
+        "must_be_masked": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "91.211.76.225",
+            "start": 364,
+            "end": 377
+          },
+          {
+            "type": "PHONE",
+            "text": "263-633-0233",
+            "start": 391,
+            "end": 403
+          }
+        ],
+        "can_be_masked": [],
+        "entities": [
+          {
+            "type": "IP_ADDRESS",
+            "text": "91.211.76.225",
+            "start": 364,
+            "end": 377
+          },
+          {
+            "type": "PHONE",
+            "text": "263-633-0233",
+            "start": 391,
+            "end": 403
+          }
+        ]
+      },
+      "metadata": {
+        "source": "langfuse_trace",
+        "trace_id": "7e68a03e1676434b905ed3950f7c973d",
+        "scrubbed": true,
+        "injected": 2,
+        "residual_name_risk": true
+      }
+    }
+  ]
+}

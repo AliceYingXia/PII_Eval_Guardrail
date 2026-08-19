@@ -1,0 +1,118 @@
+{
+  "privacy_filter": {
+    "pii-injected-v1": {
+      "tp": 185,
+      "fp": 23,
+      "fn": 52,
+      "items": 130,
+      "precision": 0.8894,
+      "recall": 0.7806,
+      "f1": 0.8315
+    },
+    "pii-injected-hard-v1": {
+      "tp": 65,
+      "fp": 44,
+      "fn": 36,
+      "items": 130,
+      "precision": 0.5963,
+      "recall": 0.6436,
+      "f1": 0.619
+    },
+    "pii-realistic-v1": {
+      "tp": 153,
+      "fp": 29,
+      "fn": 20,
+      "items": 130,
+      "precision": 0.8407,
+      "recall": 0.8844,
+      "f1": 0.862
+    }
+  },
+  "privacy_filter_nemotron": {
+    "pii-injected-v1": {
+      "tp": 226,
+      "fp": 9,
+      "fn": 11,
+      "items": 130,
+      "precision": 0.9617,
+      "recall": 0.9536,
+      "f1": 0.9576
+    },
+    "pii-injected-hard-v1": {
+      "tp": 42,
+      "fp": 26,
+      "fn": 59,
+      "items": 130,
+      "precision": 0.6176,
+      "recall": 0.4158,
+      "f1": 0.497
+    },
+    "pii-realistic-v1": {
+      "tp": 134,
+      "fp": 26,
+      "fn": 39,
+      "items": 130,
+      "precision": 0.8375,
+      "recall": 0.7746,
+      "f1": 0.8048
+    }
+  },
+  "pii_superclinical_small": {
+    "pii-injected-v1": {
+      "tp": 220,
+      "fp": 13,
+      "fn": 17,
+      "items": 130,
+      "precision": 0.9442,
+      "recall": 0.9283,
+      "f1": 0.9362
+    },
+    "pii-injected-hard-v1": {
+      "tp": 43,
+      "fp": 29,
+      "fn": 58,
+      "items": 130,
+      "precision": 0.5972,
+      "recall": 0.4257,
+      "f1": 0.4971
+    },
+    "pii-realistic-v1": {
+      "tp": 146,
+      "fp": 33,
+      "fn": 27,
+      "items": 130,
+      "precision": 0.8156,
+      "recall": 0.8439,
+      "f1": 0.8295
+    }
+  },
+  "pii_superclinical_large": {
+    "pii-injected-v1": {
+      "tp": 226,
+      "fp": 8,
+      "fn": 11,
+      "items": 130,
+      "precision": 0.9658,
+      "recall": 0.9536,
+      "f1": 0.9597
+    },
+    "pii-injected-hard-v1": {
+      "tp": 63,
+      "fp": 20,
+      "fn": 38,
+      "items": 130,
+      "precision": 0.759,
+      "recall": 0.6238,
+      "f1": 0.6848
+    },
+    "pii-realistic-v1": {
+      "tp": 161,
+      "fp": 13,
+      "fn": 12,
+      "items": 130,
+      "precision": 0.9253,
+      "recall": 0.9306,
+      "f1": 0.928
+    }
+  }
+}
