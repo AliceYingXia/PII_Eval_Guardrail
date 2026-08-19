@@ -1,7 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(PYTHONPATH=. .venv/bin/python /private/tmp/claude-501/-Users-alice-project-PII-openai-privacy-filter/73ea9a14-2cbb-48ac-8b30-4f4ab52da3de/scratchpad/check_determinism.py)"
-    ]
-  }
-}
