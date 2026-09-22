@@ -27,14 +27,17 @@ and writes `results/summary_refined_with_regex.json`.
 | pii-injected-v1 (refined) | OpenMed/privacy-filter-nemotron | 96.31% | 99.16% | 0.9771 |
 | pii-injected-v1 (refined) | OpenMed-PII-SuperClinical-Small (44M) | 94.31% | 97.89% | 0.9607 |
 | pii-injected-v1 (refined) | OpenMed-PII-SuperClinical-Large (434M) | 96.71% | 99.16% | 0.9792 |
+| pii-injected-v1 (refined) | OpenMed/privacy-filter-multilingual-v2 | 96.33% | 99.58% | 0.9793 |
 | pii-injected-hard-v1 (refined) | openai/privacy-filter | 69.01% | 97.03% | 0.8066 |
 | pii-injected-hard-v1 (refined) | OpenMed/privacy-filter-nemotron | 78.38% | 86.14% | 0.8208 |
 | pii-injected-hard-v1 (refined) | OpenMed-PII-SuperClinical-Small (44M) | 76.99% | 86.14% | 0.8131 |
 | pii-injected-hard-v1 (refined) | OpenMed-PII-SuperClinical-Large (434M) | 82.64% | 99.01% | 0.9009 |
+| pii-injected-hard-v1 (refined) | OpenMed/privacy-filter-multilingual-v2 | 68.66% | 91.09% | 0.7830 |
 | pii-realistic-v1 (refined) | openai/privacy-filter | 86.36% | 98.84% | 0.9218 |
 | pii-realistic-v1 (refined) | OpenMed/privacy-filter-nemotron | 85.71% | 97.11% | 0.9106 |
 | pii-realistic-v1 (refined) | OpenMed-PII-SuperClinical-Small (44M) | 83.82% | 98.84% | 0.9072 |
 | pii-realistic-v1 (refined) | OpenMed-PII-SuperClinical-Large (434M) | 93.51% | 100.0% | 0.9665 |
+| pii-realistic-v1 (refined) | OpenMed/privacy-filter-multilingual-v2 | 88.14% | 98.84% | 0.9319 |
 
 ## Raw counts
 
@@ -44,14 +47,17 @@ and writes `results/summary_refined_with_regex.json`.
 | pii-injected-v1 (refined) | OpenMed/privacy-filter-nemotron | 235 | 9 | 2 | 130 |
 | pii-injected-v1 (refined) | OpenMed-PII-SuperClinical-Small | 232 | 14 | 5 | 130 |
 | pii-injected-v1 (refined) | OpenMed-PII-SuperClinical-Large | 235 | 8 | 2 | 130 |
+| pii-injected-v1 (refined) | OpenMed/privacy-filter-multilingual-v2 | 236 | 9 | 1 | 130 |
 | pii-injected-hard-v1 (refined) | openai/privacy-filter | 98 | 44 | 3 | 130 |
 | pii-injected-hard-v1 (refined) | OpenMed/privacy-filter-nemotron | 87 | 24 | 14 | 130 |
 | pii-injected-hard-v1 (refined) | OpenMed-PII-SuperClinical-Small | 87 | 26 | 14 | 130 |
 | pii-injected-hard-v1 (refined) | OpenMed-PII-SuperClinical-Large | 100 | 21 | 1 | 130 |
+| pii-injected-hard-v1 (refined) | OpenMed/privacy-filter-multilingual-v2 | 92 | 42 | 9 | 130 |
 | pii-realistic-v1 (refined) | openai/privacy-filter | 171 | 27 | 2 | 130 |
 | pii-realistic-v1 (refined) | OpenMed/privacy-filter-nemotron | 168 | 28 | 5 | 130 |
 | pii-realistic-v1 (refined) | OpenMed-PII-SuperClinical-Small | 171 | 33 | 2 | 130 |
 | pii-realistic-v1 (refined) | OpenMed-PII-SuperClinical-Large | 173 | 12 | 0 | 130 |
+| pii-realistic-v1 (refined) | OpenMed/privacy-filter-multilingual-v2 | 171 | 23 | 2 | 130 |
 
 ## Comparison against the original (unrefined) datasets
 
@@ -72,8 +78,13 @@ Comparing `(tp, fp, fn)` per model/dataset against `results/summary.json`
 | pii_superclinical_large | pii-injected-v1 | (235, 8, 2) | (235, 8, 2) | same |
 | pii_superclinical_large | pii-injected-hard-v1 | (101, 20, 0) | (100, 21, 1) | **diff** |
 | pii_superclinical_large | pii-realistic-v1 | (173, 13, 0) | (173, 12, 0) | **diff** |
+| privacy_filter_multilingual_v2 | pii-injected-v1 | (236, 9, 1) | (236, 9, 1) | same |
+| privacy_filter_multilingual_v2 | pii-injected-hard-v1 | (92, 44, 9) | (92, 42, 9) | **diff** |
+| privacy_filter_multilingual_v2 | pii-realistic-v1 | (172, 23, 1) | (171, 23, 2) | **diff** |
 
-7 of 12 model/dataset combinations shift by 1-3 counts. All shifts are small
+7 of 12 original model/dataset combinations shift by 1-3 counts (added later:
+`privacy_filter_multilingual_v2` also shifts on 2 of its 3, same small
+bidirectional pattern). All shifts are small
 (≤3 entities) and go in both directions (some FN counts rise, some fall) —
 this is **not** the regex layer behaving differently (it's shape-based and
 matches the same character spans regardless of digit validity, as established
@@ -110,6 +121,17 @@ how well a given model happens to tag them.
   NANP, IP-reservation check) would reject outright, which matters for anyone
   citing this dataset as "realistic" PII coverage independent of model
   scoring.
+- **OpenMed/privacy-filter-multilingual-v2** (added later — see
+  `configs/privacy_filter_multilingual_v2.py`) shows the same pattern as the
+  original four models on refined data: essentially unchanged on
+  `pii-injected-v1` (0.9793 F1, matching its unrefined score almost exactly)
+  and small, low-single-digit count shifts on the other two datasets. It
+  remains the weakest of the five models on `pii-injected-hard-v1` (0.7830 F1)
+  and doesn't reach `SuperClinical-Large`'s near-perfect recall there or on
+  `pii-realistic-v1`. No FN/FP deep-dive was run for this model (unlike
+  `SuperClinical-Large` below) — `analyze_fn.py`/`analyze_fp.py` can produce
+  one on demand from the cached `raw_results/privacy_filter_multilingual_v2/`
+  predictions if needed.
 
 ## Deep dive: SuperClinical-Large FN/FP on pii-injected-v1 (refined)
 

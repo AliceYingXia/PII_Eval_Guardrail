@@ -21,14 +21,17 @@ layered on top differs.
 | pii-injected-v1 (refined) | OpenMed/privacy-filter-nemotron | 96.14% | 94.51% | 0.9532 |
 | pii-injected-v1 (refined) | OpenMed-PII-SuperClinical-Small (44M) | 93.99% | 92.41% | 0.9319 |
 | pii-injected-v1 (refined) | OpenMed-PII-SuperClinical-Large (434M) | 96.60% | 95.78% | 0.9619 |
+| pii-injected-v1 (refined) | OpenMed/privacy-filter-multilingual-v2 | 96.25% | 97.47% | 0.9686 |
 | pii-injected-hard-v1 (refined) | openai/privacy-filter | 59.26% | 63.37% | 0.6124 |
 | pii-injected-hard-v1 (refined) | OpenMed/privacy-filter-nemotron | 65.22% | 44.55% | 0.5294 |
 | pii-injected-hard-v1 (refined) | OpenMed-PII-SuperClinical-Small (44M) | 63.38% | 44.55% | 0.5233 |
 | pii-injected-hard-v1 (refined) | OpenMed-PII-SuperClinical-Large (434M) | 74.70% | 61.39% | 0.6739 |
+| pii-injected-hard-v1 (refined) | OpenMed/privacy-filter-multilingual-v2 | 60.00% | 62.38% | 0.6117 |
 | pii-realistic-v1 (refined) | openai/privacy-filter | 85.08% | 89.02% | 0.8701 |
 | pii-realistic-v1 (refined) | OpenMed/privacy-filter-nemotron | 82.50% | 76.30% | 0.7928 |
 | pii-realistic-v1 (refined) | OpenMed-PII-SuperClinical-Small (44M) | 81.67% | 84.97% | 0.8329 |
 | pii-realistic-v1 (refined) | OpenMed-PII-SuperClinical-Large (434M) | 93.06% | 93.06% | 0.9306 |
+| pii-realistic-v1 (refined) | OpenMed/privacy-filter-multilingual-v2 | 86.63% | 86.13% | 0.8638 |
 
 ## Raw counts (model-only)
 
@@ -38,14 +41,17 @@ layered on top differs.
 | pii-injected-v1 (refined) | OpenMed/privacy-filter-nemotron | 224 | 9 | 13 | 130 |
 | pii-injected-v1 (refined) | OpenMed-PII-SuperClinical-Small | 219 | 14 | 18 | 130 |
 | pii-injected-v1 (refined) | OpenMed-PII-SuperClinical-Large | 227 | 8 | 10 | 130 |
+| pii-injected-v1 (refined) | OpenMed/privacy-filter-multilingual-v2 | 231 | 9 | 6 | 130 |
 | pii-injected-hard-v1 (refined) | openai/privacy-filter | 64 | 44 | 37 | 130 |
 | pii-injected-hard-v1 (refined) | OpenMed/privacy-filter-nemotron | 45 | 24 | 56 | 130 |
 | pii-injected-hard-v1 (refined) | OpenMed-PII-SuperClinical-Small | 45 | 26 | 56 | 130 |
 | pii-injected-hard-v1 (refined) | OpenMed-PII-SuperClinical-Large | 62 | 21 | 39 | 130 |
+| pii-injected-hard-v1 (refined) | OpenMed/privacy-filter-multilingual-v2 | 63 | 42 | 38 | 130 |
 | pii-realistic-v1 (refined) | openai/privacy-filter | 154 | 27 | 19 | 130 |
 | pii-realistic-v1 (refined) | OpenMed/privacy-filter-nemotron | 132 | 28 | 41 | 130 |
 | pii-realistic-v1 (refined) | OpenMed-PII-SuperClinical-Small | 147 | 33 | 26 | 130 |
 | pii-realistic-v1 (refined) | OpenMed-PII-SuperClinical-Large | 161 | 12 | 12 | 130 |
+| pii-realistic-v1 (refined) | OpenMed/privacy-filter-multilingual-v2 | 149 | 23 | 24 | 130 |
 
 ## Comparison against the original (unrefined) datasets, model-only
 
@@ -66,6 +72,9 @@ Comparing `(tp, fp, fn)` per model/dataset against `results/summary_no_regex.jso
 | pii_superclinical_large | pii-injected-v1 | (226, 8, 11) | (227, 8, 10) | **diff** |
 | pii_superclinical_large | pii-injected-hard-v1 | (63, 20, 38) | (62, 21, 39) | **diff** |
 | pii_superclinical_large | pii-realistic-v1 | (161, 13, 12) | (161, 12, 12) | **diff** |
+| privacy_filter_multilingual_v2 | pii-injected-v1 | (229, 9, 8) | (231, 9, 6) | **diff** |
+| privacy_filter_multilingual_v2 | pii-injected-hard-v1 | (64, 44, 37) | (63, 42, 38) | **diff** |
+| privacy_filter_multilingual_v2 | pii-realistic-v1 | (151, 23, 22) | (149, 23, 24) | **diff** |
 
 Without the regex safety net, differences show up in 11 of 12 combinations
 (vs. 7 of 12 with regex active) — every shift is still small (≤3 entities,
@@ -99,3 +108,11 @@ recall model-only vs. 86.14% with regex), same as in the original comparison.
   handful of entities per dataset (see table above), but never enough to
   change which model ranks where, or to alter the top-level conclusion that
   the regex supplement is doing most of the heavy lifting on clean-format PII.
+- **OpenMed/privacy-filter-multilingual-v2** (added later) follows the same
+  pattern model-only: its recall collapses on `pii-injected-hard-v1` (91.09%
+  with regex → 62.38% model-only), confirming its strong with-regex numbers
+  are likewise mostly the regex layer's doing rather than its own NER. Its
+  average model-only F1 across the three refined datasets (~0.815) places it
+  second behind `SuperClinical-Large` (~0.858) and ahead of `openai/privacy-filter`,
+  `-nemotron`, and `SuperClinical-Small` — same ranking as on the unrefined
+  data in `pii-results-model-only.md`.
